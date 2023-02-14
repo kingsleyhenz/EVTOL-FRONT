@@ -4,13 +4,14 @@ import axios from "axios";
 import SideBar from "../Component/dashSide";
 import DataTable from "react-data-table-component";
 
-const EvtolList = () => {
+const Avalaible = () => {
   const [evtols, setEvtols] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(
-        "https://evtol-back-production.up.railway.app/api/v1/evtol/admin/all");
+        "https://evtol-back-production.up.railway.app/api/v1/evtol/admin/availableEV"
+      );
       setEvtols(result.data.data);
     };
     fetchData();
@@ -44,7 +45,7 @@ const EvtolList = () => {
       <div className="wrpp">
         <SideBar />
         <div className="main">
-          <p>All EVTOL DEVICES</p>
+          <p>Available EVTOL DEVICES</p>
           <div className="evwrap">
             <DataTable columns={columns} data={evtols} pagination />
           </div>
@@ -54,5 +55,5 @@ const EvtolList = () => {
   );
 };
 
-export default EvtolList;
+export default Avalaible;
 
