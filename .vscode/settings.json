@@ -1,0 +1,12 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "phoenisx.cssvar",
+    "workbench.editor.autoLockGroups": {
+        "default": true
+    },
+    "css.format.enable": false,
+    "css.styleSheets": [
+    
+    ]
+}
