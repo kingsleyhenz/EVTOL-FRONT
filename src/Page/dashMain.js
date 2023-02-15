@@ -74,6 +74,7 @@ const Home = () => {
             icon: "success",
             confirmButtonText: "OK",
           });
+          window.location.reload();
         } else {
           Swal.fire({
             title: "Error!",
@@ -82,7 +83,6 @@ const Home = () => {
             confirmButtonText: "OK",
           });
         }
-        window.location.reload();
       })
       .catch((error) => {
         console.log(error);

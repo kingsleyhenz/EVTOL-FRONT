@@ -27,7 +27,7 @@ const EvtolList = () => {
     {
       name: "Weight",
       selector: "weight",
-      cell: (row) => `${row.weight}kg`,
+      cell: (row) => `${row.weight}gr`,
     },
     {
       name: "Battery",

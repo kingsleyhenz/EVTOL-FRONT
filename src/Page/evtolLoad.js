@@ -17,7 +17,7 @@ const Load = () => {
       e.preventDefault();
       console.log("Submitting form with serialNo", serialNo);
       axios
-        .post(`http://localhost:4000/api/v1/evtol/admin/Load/${serialNo}`, {
+        .post(`https://evtol-back-production.up.railway.app/api/v1/evtol/admin/Load/${serialNo}`, {
           name,
           weight,
           code,
@@ -43,7 +43,7 @@ const Load = () => {
         const formData = new FormData();
         formData.append("profile", image);
         axios
-          .post(`http://evtol-back-production.up.railway.app/api/v1/evtol/admin/UploadImage/${name}`, formData)
+          .post(`https://evtol-back-production.up.railway.app/api/v1/evtol/admin/UploadImage/${name}`, formData)
           .then((res) => {
               console.log("Response from server:", res);
             if (res.data.status === "Success") {
@@ -55,6 +55,25 @@ const Load = () => {
           .catch((err) => {
             console.error(err); 
             Swal.fire("Error", "An error occurred", "error");
+          });
+      };
+
+      const handleDeploy = (e) => {
+        e.preventDefault();
+        console.log("Deploying medication...");
+        axios
+          .put(`https://evtol-back-production.up.railway.app/api/v1/evtol/admin/deliverMeds/${name}`)
+          .then((res) => {
+            console.log("Response from server:", res);
+            if (res.data.status === "success") {
+              Swal.fire("Success", "Medications are being delivered!", "success");
+            } else {
+              Swal.fire("Error", "An error occurred while deploying medications.", "error");
+            }
+          })
+          .catch((err) => {
+            console.error(err);
+            Swal.fire("Error", "An error occurred while deploying medications.", "error");
           });
       };
   return (
@@ -76,6 +95,10 @@ const Load = () => {
                 <input type="text" placeholder="Medication Name" value={name} onChange={(e) => setName(e.target.value)} required/>
                 <input type="file" name="profile" onChange={(e) => setImage(e.target.files[0])} required/>
                 <button type="submit">Upload Image</button>
+            </form>
+            <form id="imgform" onSubmit={handleDeploy}>
+            <input type="text"  placeholder="Medication Name" value={name} onChange={(e) => setName(e.target.value)} required/>
+            <button type="submit">DEPLOY</button>
             </form>
           </div>
         </div>
