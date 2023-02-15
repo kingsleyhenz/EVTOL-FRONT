@@ -30,7 +30,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 30px;
     padding: 1%;
 }
 .fleetbx form{
@@ -69,4 +69,15 @@ button{
     font-weight: bold;
     box-shadow: 3px 3px 5px gray;
     border-radius: 5px;
+}
+#imgform{
+    /* background-color: red; */
+    width: 70%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+}
+#imgform input{
+    height: 50%;
+    width: 30%;
 }

@@ -14,7 +14,7 @@ const SideBar =()=>{
             <NavLink to="/Home">Register</NavLink>
             <NavLink to="/load">Load</NavLink>
             <NavLink to="/all">All</NavLink>
-            <NavLink to="/viewmeds">Check Loaded Meds</NavLink>
+            <NavLink to="/viewmeds">Check Medications</NavLink>
             <NavLink to="/viewAvailable">Check Avalaible EVTOL</NavLink>
             <NavLink to="/viewbattery">Check Battery Level</NavLink>
             </div>
