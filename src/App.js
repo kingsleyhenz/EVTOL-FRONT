@@ -1,4 +1,4 @@
-import Login from "./Page/Login"
+// import Login from "./Page/Login"
 import Home from "./Page/dashMain"
 import Avalaible from "./Page/avalaible"
 import EvtolList from "./Page/allEvtol"
@@ -11,8 +11,8 @@ function App() {
   return (
     <>
     <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
+        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/all" element={<EvtolList />} />
         <Route path="/load" element={<Load/>}/>
         <Route path="/viewmeds" element={<Meds/>}/>

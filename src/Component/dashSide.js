@@ -11,7 +11,7 @@ const SideBar =()=>{
             <h2>EV-TRANS</h2>
         </div>
             <div className="firstlayer">
-            <NavLink to="/Home">Register</NavLink>
+            <NavLink to="/">Register</NavLink>
             <NavLink to="/load">Load</NavLink>
             <NavLink to="/all">All</NavLink>
             <NavLink to="/viewmeds">Check Medications</NavLink>
