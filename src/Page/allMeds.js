@@ -37,7 +37,7 @@ const Meds = () => {
     },
     {
       name: "Destination",
-      selector: "carryTo",
+      selector: "destination",
       sortable: true,
     },
     {

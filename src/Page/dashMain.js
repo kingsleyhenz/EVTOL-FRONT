@@ -66,6 +66,7 @@ const Home = () => {
     e.preventDefault();
     axios
       .post("https://evtol-back-production.up.railway.app/api/v1/evtol/admin/Register", evtol)
+      // .post("http://localhost:4000/api/v1/evtol/admin/Register", evtol)
       .then((res) => {
         if (res.data.status === "Success") {
           Swal.fire({

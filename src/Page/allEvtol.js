@@ -9,8 +9,8 @@ const EvtolList = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(
-        "https://evtol-back-production.up.railway.app/api/v1/evtol/admin/all");
+      const result = await axios.get("https://evtol-back-production.up.railway.app/api/v1/evtol/admin/all");
+      // const result = await axios.get("http://localhost:4000/api/v1/evtol/admin/all");
       setEvtols(result.data.data);
     };
     fetchData();
