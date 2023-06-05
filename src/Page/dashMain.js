@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import "../Stylesheet/dashMain.css";
 import SideBar from "../Component/dashSide";
+import { TotalBooked, TotalEv, TotalIdle } from "../Component/stats";
 
 const Home = () => {
   const [evtol, setEvtol] = useState({
@@ -64,9 +65,8 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("https://evtol-back-production.up.railway.app/api/v1/evtol/admin/Register", evtol)
-      // .post("http://localhost:4000/api/v1/evtol/admin/Register", evtol)
+    // axios.post("https://evtol-back-production.up.railway.app/api/v1/evtol/admin/Register", evtol)
+       axios.post("http://localhost:4000/api/v1/evtol/admin/Register", evtol)
       .then((res) => {
         if (res.data.status === "Success") {
           Swal.fire({
@@ -74,8 +74,12 @@ const Home = () => {
             text: "EVTOL Registered Successfully",
             icon: "success",
             confirmButtonText: "OK",
+            timer: 3000, // Specify the duration in milliseconds (3 seconds in this example)
+            timerProgressBar: true, // Enable the progress bar
+            onClose: () => {
+              window.location.reload(); // Reload the page after the alert is closed
+            }
           });
-          window.location.reload();
         } else {
           Swal.fire({
             title: "Error!",
@@ -83,7 +87,7 @@ const Home = () => {
             icon: "error",
             confirmButtonText: "OK",
           });
-        }
+        }        
       })
       .catch((error) => {
         console.log(error);
@@ -99,9 +103,14 @@ const Home = () => {
     <>
       <div className="wrp">
         <SideBar />
-        <div className="main">
+        <div className="dashmain">
           <p>Registeration Page</p>
           <div className="fleetbx">
+            <div className="dubs">
+              <TotalEv/>
+              <TotalIdle/>
+              <TotalBooked/>
+            </div>
             <form onSubmit={handleSubmit}>
               <input type="text" placeholder="Serial No." name="serialNo" value={evtol.serialNo}onChange={handleChange} required/>
               <input type="text" placeholder="Model" name="model" value={evtol.model} onChange={handleChange} readOnly/>

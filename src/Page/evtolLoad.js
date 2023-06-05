@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import "../Stylesheet/dashMain.css";
+import "../Stylesheet/Load.css";
 import SideBar from "../Component/dashSide";
 
 const Load = () => {
@@ -61,7 +61,8 @@ const Load = () => {
 
       const handleDeploy = (e) => {
         e.preventDefault();
-        axios.post(`https://evtol-back-production.up.railway.app/api/v1/evtol/admin/deployEv/${serialNo}`)
+        axios
+          .post(`http://localhost:4000/api/v1/evtol/admin/deploy/${serialNo}`)
           .then((res) => {
             console.log("Response from server:", res);
             if (res.data.status === "success") {
@@ -71,17 +72,23 @@ const Load = () => {
             }
           })
           .catch((err) => {
-            console.error(err);
-            Swal.fire("Error", "An error occurred while deploying medications.", "error");
+            if (err.response && err.response.status === 400 && err.response.data.message === "EVTOL is already marked as delivering.") {
+              Swal.fire("Warning", "EVTOL is already marked as delivering", "warning");
+            } else {
+              console.error(err);
+              Swal.fire("Error", "An error occurred while deploying medications.", "error");
+            }
           });
       };
+      
+      
   return (
     <>
       <div className="wrp">
         <SideBar />
         <div className="main">
           <p>Medication Loading Page</p>
-          <div className="fleetbx">
+          <div className="fleetbxii">
             <form onSubmit={handleSubmit}>
               <input type="text" placeholder="Medication Name" value={name} onChange={(e) => setName(e.target.value)} required />
               <input type="text" placeholder="Weight(gr)" value={weight} onChange={(e) => setWeight(e.target.value)} required />

@@ -10,7 +10,8 @@ const Meds = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://evtol-back-production.up.railway.app/api/v1/evtol/admin/checkMeds");
+        // const response = await axios.get("https://evtol-back-production.up.railway.app/api/v1/evtol/admin/checkMeds");
+        const response = await axios.get("http://localhost:4000/api/v1/evtol/admin/checkMeds");
         setLoadedItems(response.data.data.filter((item) => item.image !== null));
       } catch (error) {
         console.log(error);
