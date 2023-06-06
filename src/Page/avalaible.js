@@ -10,7 +10,7 @@ const Avalaible = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(
-        "https://evtol-back-production.up.railway.app/api/v1/evtol/admin/availableEV"
+        "http://localhost:4000/api/v1/evtol/admin/availableEV"
       );
       setEvtols(result.data.data);
     };

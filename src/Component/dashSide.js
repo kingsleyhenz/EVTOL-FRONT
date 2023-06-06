@@ -11,12 +11,12 @@ const SideBar =()=>{
             <h2>EV-TRANS</h2>
         </div>
             <div className="firstlayer">
-            <NavLink to="/">Register</NavLink>
-            <NavLink to="/load">Load</NavLink>
-            <NavLink to="/all">All</NavLink>
-            <NavLink to="/viewmeds">Check Medications</NavLink>
-            <NavLink to="/viewAvailable">Check Avalaible EVTOL</NavLink>
-            <NavLink to="/viewbattery">Check Battery Level</NavLink>
+            <NavLink to="/">Register Device</NavLink>
+            <NavLink to="/load">Load Device</NavLink>
+            <NavLink to="/all">All Devices</NavLink>
+            <NavLink to="/viewmeds">Medications</NavLink>
+            <NavLink to="/viewAvailable">Avalaible EVTOL</NavLink>
+            <NavLink to="/viewbattery">History</NavLink>
             </div>
         </div>
         </>

@@ -6,15 +6,25 @@ import DataTable from "react-data-table-component";
 
 const EvtolList = () => {
   const [evtols, setEvtols] = useState([]);
+  const [filteredEvtols, setFilteredEvtols] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      // const result = await axios.get("https://evtol-back-production.up.railway.app/api/v1/evtol/admin/all");
       const result = await axios.get("http://localhost:4000/api/v1/evtol/admin/all");
       setEvtols(result.data.data);
+      setFilteredEvtols(result.data.data);
     };
     fetchData();
   }, []);
+
+  const handleFilter = (e) => {
+    const keyword = e.target.value.toLowerCase();
+    const filteredData = evtols.filter((evtol) =>
+      evtol.state.toLowerCase().includes(keyword)
+    );
+    setFilteredEvtols(filteredData);
+  };
+
   const columns = [
     {
       name: "Serial Number",
@@ -37,8 +47,11 @@ const EvtolList = () => {
     {
       name: "State",
       selector: "state",
+      sortable: true, // Enable sorting for the State column
+      cell: (row) => <span className="state-cell">{row.state}</span>,
     },
   ];
+
   return (
     <>
       <div className="wrpp">
@@ -46,7 +59,13 @@ const EvtolList = () => {
         <div className="main">
           <p>All EVTOL DEVICES</p>
           <div className="evwrap">
-            <DataTable columns={columns} data={evtols} pagination />
+            <input style={{border: "1px solid whitesmoke", padding: "2px"}}
+              type="text"
+              placeholder="Filter by state"
+              className="state-filter"
+              onChange={handleFilter}
+            />
+            <DataTable columns={columns} data={filteredEvtols} pagination />
           </div>
         </div>
       </div>
@@ -55,4 +74,3 @@ const EvtolList = () => {
 };
 
 export default EvtolList;
-

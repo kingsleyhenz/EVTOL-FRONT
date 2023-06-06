@@ -9,8 +9,7 @@
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    animation: spin linear infinite;
-    animation-duration: 30s;
+    animation: spin 2s linear infinite;
     margin: 0 auto;
   }
   
@@ -47,4 +46,15 @@
     color: #3498db;
   }
   
-  
+  @media screen and (max-width: 845px) {
+      .statbx{
+        width: 50%;
+        height: 30%;
+      }
+  }
+
+  @media screen and (max-width:555px) {
+    .statbx{
+      width: 75%;
+    }
+  }

@@ -74,10 +74,10 @@ const Home = () => {
             text: "EVTOL Registered Successfully",
             icon: "success",
             confirmButtonText: "OK",
-            timer: 3000, // Specify the duration in milliseconds (3 seconds in this example)
-            timerProgressBar: true, // Enable the progress bar
+            timer: 3000,
+            timerProgressBar: true,
             onClose: () => {
-              window.location.reload(); // Reload the page after the alert is closed
+              window.location.reload();
             }
           });
         } else {

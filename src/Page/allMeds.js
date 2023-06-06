@@ -42,6 +42,11 @@ const Meds = () => {
       sortable: true,
     },
     {
+      name: "Status",
+      selector: "status",
+      sortable: true,
+    },
+    {
       name: "Image",
       selector: "image",
       cell: (row) => <img src={row.image} alt={row.name} width={150} />,

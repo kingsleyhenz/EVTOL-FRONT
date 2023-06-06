@@ -13,8 +13,10 @@ const TotalEv = () => {
           const response = await axios.get("http://localhost:4000/api/v1/evtol/admin/all");
           const data = response.data;
           const totalEvCount = data.data.length;
-          setTotalEv(totalEvCount);
-          setLoading(false);
+          setTimeout(() => {
+            setTotalEv(totalEvCount);
+            setLoading(false);
+          }, 3000);
         } catch (error) {
           console.error(error);
           setLoading(false);
@@ -46,8 +48,10 @@ const TotalEv = () => {
         const response = await axios.get("http://localhost:4000/api/v1/evtol/admin/all");
         const { data } = response.data;
         const idleEvtols = data.filter((evtol) => evtol.state === "IDLE");
-        setTotalIdle(idleEvtols.length);
-        setLoading(false);
+        setTimeout(() => {
+            setTotalIdle(idleEvtols.length);
+            setLoading(false);
+          }, 2000);
       } catch (error) {
         console.error(error);
         setLoading(false);
@@ -76,8 +80,10 @@ const TotalEv = () => {
         const response = await axios.get("http://localhost:4000/api/v1/evtol/admin/all");
         const { data } = response.data;
         const idleEvtols = data.filter((evtol) => evtol.state === "DELIVERING");
-        setTotalBooked(idleEvtols.length);
-        setLoading(false);
+        setTimeout(() => {
+            setTotalBooked(idleEvtols.length);
+            setLoading(false);
+          }, 2000);
       } catch (error) {
         console.error(error);
         setLoading(false);

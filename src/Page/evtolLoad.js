@@ -11,18 +11,19 @@ const Load = () => {
     const [weight, setWeight] = useState("");
     const [code, setCode] = useState("");
     const [destination, setDestination] = useState("");
+    const [status, setStatus] = useState("PENDING");
     const [serialNo, setSerialNo] = useState("");
     const [image, setImage] = useState(null);
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log("Submitting form with serialNo", serialNo);
       // axios.post(`https://evtol-back-production.up.railway.app/api/v1/evtol/admin/Load/${serialNo}`, {
         axios.post(`http://localhost:4000/api/v1/evtol/admin/Load/${serialNo}`, {
           name,
           email,
           weight,
           code,
+          status,
           destination,
         })
         .then((res) => {
