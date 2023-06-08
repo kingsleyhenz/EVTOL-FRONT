@@ -90,6 +90,14 @@ button{
         overflow-x: scroll !important;
         flex-direction: column-reverse;
 }
+.dashmain{
+    padding: 0;
+}
+#dhd{
+    height: 50px !important;
+    display: flex;
+    align-items: center;
+}
 .dubs{
         height: 3500px !important;
         flex-direction: column;
