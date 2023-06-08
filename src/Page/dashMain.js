@@ -104,7 +104,7 @@ const Home = () => {
       <div className="wrp">
         <SideBar />
         <div className="dashmain">
-          <p>Registeration Page</p>
+          <p id="dhd" >Registeration Page</p>
           <div className="fleetbx">
             <div className="dubs">
               <TotalEv/>
