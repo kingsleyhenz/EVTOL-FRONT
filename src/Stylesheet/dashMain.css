@@ -97,6 +97,9 @@ button{
     height: 50px !important;
     display: flex;
     align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
 }
 .dubs{
         height: 3500px !important;
