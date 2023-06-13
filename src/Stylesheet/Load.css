@@ -163,6 +163,7 @@ button{
     #fld{
         /* background-color: red; */
         width: 95%;
+        padding: 3% 0;
     }
     
     #imgform{
