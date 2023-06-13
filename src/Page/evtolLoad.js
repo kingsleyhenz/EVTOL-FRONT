@@ -85,12 +85,12 @@ const Load = () => {
       
   return (
     <>
-      <div className="wrp">
+      <div className="wrpp">
         <SideBar />
         <div className="main">
           <p>Medication Loading Page</p>
           <div className="fleetbxii">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="fld">
               <input type="text" placeholder="Medication Name" value={name} onChange={(e) => setName(e.target.value)} required />
               <input type="text" placeholder="Weight(gr)" value={weight} onChange={(e) => setWeight(e.target.value)} required />
               <input type="text" placeholder="Medication Code" value={code} onChange={(e) => setCode(e.target.value)} required />
