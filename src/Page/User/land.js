@@ -23,7 +23,7 @@ const Landing = () => {
             ultricies justo enim eget dolor. Vivamus nec ligula nec nulla
             suscipit luctus. Nulla facilisi.
           </p>
-          <NavLink to="/register-account" className="hero-nav">
+          <NavLink to="/overview" className="hero-nav">
             Get Started
           </NavLink>
         </div>

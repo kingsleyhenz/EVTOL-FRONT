@@ -2,30 +2,32 @@ import { React } from 'react';
 import "../../Stylesheet/User/login.css";
 import { NavLink } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
+import { GiDeliveryDrone } from "react-icons/gi";
 
 const Login =()=>{
     return(
         <>
-            <div className='reg-body'>
-                <div className='sign-box'>
+            <div className='log-body'>
+                <NavLink to="/"><GiDeliveryDrone id='log-i'/></NavLink>
+                <div className='log-box'>
                     <div className='gen-box'>
                         <div className='gen-text'>
                             <h1>Login To Your Account</h1>
                             <p>Continue using our application to send and recieve your packages</p>
                         </div>
-                        <div className='first-reg'>
+                        <div className='first-log'>
                             <button> <FcGoogle id='ggl'/>Login with Google</button>
                             <div className='or'>
                                 <div id='line'></div>
                                 <p>or</p>
                                 <div id='line'></div>
                             </div>
-                            <form className='reg-form'>
-                                <div className='reg-holder'>
+                            <form className='log-form'>
+                                <div className='log-holder'>
                                     <label>Email</label>
                                     <input type="text" />
                                 </div>
-                                <div className='reg-holder'>
+                                <div className='log-holder'>
                                     <label>Password</label>
                                     <input type="text" />
                                 </div>
@@ -35,7 +37,6 @@ const Login =()=>{
                         </div>
                     </div>
                 </div>
-                <div className='log-img'></div>
             </div>
         </>
     )

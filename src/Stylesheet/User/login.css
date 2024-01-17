@@ -1,21 +1,20 @@
-.reg-body{
+.log-body{
     width: 100%;
     height: 100vh;
     /* background-color: black; */
     display: flex;
+    justify-content: center;
+    position: relative;
 }
-.log-img{
-    width: 50%;
-    height: 100%;
-    background-image: url(../../assets/delivery-robot-futuristic-environment.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    background-color: rgba(0, 0, 0, 0.521);
-    background-blend-mode: darken;
+#log-i{
+    font-size: 25px;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    color: black !important;
 }
-.sign-box{
-    width: 50%;
+.log-box{
+    width: 55%;
     height: 100%;
     /* background-color: wheat; */
     display: flex;
@@ -44,7 +43,7 @@
 .gen-text > p{
     font-size: 14px;
 }
-.first-reg{
+.first-log{
     width: 95%;
     height: 80%;
     /* background-color: red; */
@@ -53,7 +52,7 @@
     align-items: center;
     gap: 3%;
 }
-.first-reg > button{
+.first-log > button{
     width: 70%;
     height: 10%;
     border: 1px solid grey;
@@ -81,7 +80,7 @@
     height: 1%;
     background-color: black;
 }
-.reg-form{
+.log-form{
     /* background-color: black; */
     width: 70%;
     height: 60%;
@@ -89,7 +88,7 @@
     flex-direction: column;
     gap: 10%;
 }
-.reg-holder{
+.log-holder{
     width: 100%;
     height: 25%;
     /* background-color: yellow; */
@@ -97,7 +96,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.reg-holder > input{
+.log-holder > input{
     height: 60%;
     background-color: whitesmoke;
     border: 1px solid rgb(219, 219, 219);
@@ -105,7 +104,7 @@
     outline: none;
     padding-left: 1%;
 }
-.reg-form > button{
+.log-form > button{
     height: 15%;
     width: 100%;
     border: none;

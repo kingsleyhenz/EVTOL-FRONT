@@ -2,12 +2,17 @@ import { React } from 'react';
 import "../../Stylesheet/User/SignUp.css"
 import { NavLink } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
+import { GiDeliveryDrone } from "react-icons/gi";
 
 const SignUp =()=>{
     return(
         <>
             <div className='reg-body'>
-                <div className='reg-img'></div>
+                <div className='reg-img'>
+                    <NavLink to="/" id='reg-lnk'>
+                        <GiDeliveryDrone/>
+                    </NavLink>
+                </div>
                 <div className='sign-box'>
                     <div className='gen-box'>
                         <div className='gen-text'>
@@ -22,8 +27,20 @@ const SignUp =()=>{
                                 <div id='line'></div>
                             </div>
                             <form className='reg-form'>
+                                <div className='reg-holder holder-one'>
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder='eg. John Wick'/>
+                                </div>
                                 <div className='reg-holder'>
                                     <label>Email</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='reg-holder'>
+                                    <label>Username</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='reg-holder'>
+                                    <label>Phone No</label>
                                     <input type="text" />
                                 </div>
                                 <div className='reg-holder'>
