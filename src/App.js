@@ -11,10 +11,12 @@ import About from './Page/User/about';
 import MakeRequest from "./Page/User/request";
 import SignUp from "./Page/User/signup";
 import Login from './Page/User/login';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <>
+    <ToastContainer />
     <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/about" element={<About/>} />
