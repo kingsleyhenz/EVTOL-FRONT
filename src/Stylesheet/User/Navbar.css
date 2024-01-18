@@ -43,7 +43,8 @@ nav{
     height: 100%;
     display: flex;
     align-items: center;
-    gap: 7%;
+    gap: 15%;
+    padding-top: 1%;
 }
 #nav-btn{
     text-decoration: none;
@@ -65,4 +66,12 @@ nav{
     transition: 1s;
     color: white;
     background-color: rgb(48, 48, 48);
+}
+
+#nav-icon{
+    font-size: 30px;
+    color: rgb(100, 100, 100);
+}
+#nav-icon:hover{
+    background-color: transparent;
 }
