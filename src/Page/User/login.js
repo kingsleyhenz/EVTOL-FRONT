@@ -24,7 +24,7 @@ const Login =()=>{
                 toast.success("Login Successful👋");
                 localStorage.setItem("auth_token", response.data.token);
                 localStorage.setItem("role", response.data.role)
-                navigate('/');
+                navigate('/user-dash');
             } else {
                 toast.error(response.data.message);
             }

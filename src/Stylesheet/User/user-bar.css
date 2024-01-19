@@ -1,33 +1,55 @@
 .user-bar{
-    width: 15%;
+    width: 17%;
     height: 100%;
-    background-color: black;
-    border-top-right-radius: 40px;
+    background-color: rgb(34, 34, 34);
+    /* border-top-right-radius: 40px; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 1%;
-    gap: 10%;
+    gap: 5%;
+}
+.user-bar-head{
+    width: 100%;
+    height: 10%;
+    /* background-color: springgreen; */
+    display: flex;
+    padding-left: 15%;
+    gap: 2%;
+    align-items: center;
+    color: white;
 }
 #user-head-i{
     color: white;
-    font-size: 40px;
+    font-size: 27px;
 }
 .user-opts{
-    width: 70%;
-    height: 45%;
+    width: 80%;
+    height: 60%;
     /* background-color: palegreen; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10%;
+    gap: 8%;
     color: white;
 }
 #user-links{
     color: white;
     text-decoration: none;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    border-radius: 8px;
+    gap: 8%;
+}
+#user-links > p{
+    font-size: 13px;
 }
 #user-links:hover{
-    background-color: transparent;
-    color: orangered;
+    background-color: orangered;
+    color: black;
+}
+#user-i{
+    font-size: 25px;
 }

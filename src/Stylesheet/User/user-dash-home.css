@@ -1,6 +1,79 @@
 .user-wrap{
     width: 100%;
     height: 100vh;
-    background-color: rgb(34, 34, 34);
     display: flex;
+    justify-content: space-between;
+    background-color: rgb(34, 34, 34);
+}
+.main-user-content{
+    width: 78%;
+    height: 100%;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 1%; */
+}
+
+.main-dash-head{
+    width: 95%;
+    height: 10%;
+    /* background-color: springgreen; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+#dash-head-i{
+    font-size: 25px;
+    margin-top: 1%;
+}
+.dash-date{
+    width: 20%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+.dash-date > p{
+    font-size: 15px;
+}
+.dash-user{
+    width: 20%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+.dash-notif{
+    width: 25%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+}
+#dash-date-i{
+    font-size: 23px;
+    margin-bottom: 1px;
+}
+
+#not-link{
+    width: 100%;
+    height: 60%;
+    background-color:white;
+    border-radius: 40px;
+    padding: 0px 10px;
+    display: flex;
+    color: black;
+    align-items: center;
+    text-decoration: none;
+    gap: 3%;
+}
+#not-link > p{
+    margin-top: 5px;
+}
+#not-link:hover{
+    color: orangered;
 }
