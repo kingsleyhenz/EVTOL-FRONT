@@ -12,6 +12,7 @@ import SignUp from "./Page/User/signup";
 import Login from './Page/User/login';
 import { ToastContainer } from 'react-toastify';
 import UserHome from './Page/User/user-dash-home';
+import AddReq from "./Page/User/user-dash-add";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/requests" element={<Requests/>}/>
         <Route path="/viewAvailable" element={<Avalaible />} />
         <Route path="/user-dash" element={<UserHome />} />
+        <Route path="/add-req" element={<AddReq />} />
     </Routes>
     </>
   );

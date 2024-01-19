@@ -17,11 +17,11 @@ const UserSide = () => {
           <h2>SkyCargo</h2>
         </div>
         <div className="user-opts"> 
-         <NavLink to="/" id="user-links">
+         <NavLink to="/user-dash" id="user-links">
             <RiHomeFill id="user-i"/>
             <p>Dashboard</p>
           </NavLink>
-          <NavLink to="/user-dash" id="user-links">
+          <NavLink to="/add-req" id="user-links">
             <GiStorkDelivery id="user-i"/>
             <p>Add Request</p>
             </NavLink>

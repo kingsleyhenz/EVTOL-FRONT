@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import '../../Stylesheet/User/user-dash-home.css'
 import UserSide from './../../Component/userSideBar';
 import { IoNotifications } from "react-icons/io5";
@@ -6,10 +6,26 @@ import { MdDateRange } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
 import { ReportCards, ReportTable } from "../../Component/user-dash-comps";
+import UserDashLoader from "../../Component/user-loader";
 
 const UserHome=()=>{
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 5000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (loading) {
+        return <div className="load-wrp">
+            <UserDashLoader />
+        </div>;
+    }
     return(
         <>
+        
             <div className="user-wrap">
                 <UserSide/>
                 <div className="main-user-content">
