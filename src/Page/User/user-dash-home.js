@@ -37,7 +37,7 @@ const UserHome=()=>{
                         <div className="dash-notif">
                             <NavLink to='/' id="not-link">
                                 <IoNotifications id="dash-head-i"/>
-                                <p>Notifications</p>
+                                <p>1 New Notification(s)</p>
                             </NavLink>
                         </div>
                         <div className="dash-user">
