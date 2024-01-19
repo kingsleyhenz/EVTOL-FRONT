@@ -1,0 +1,67 @@
+.rep-card-wrp{
+    width: 99%;
+    height: 20%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rep-card{
+    width: 30%;
+    height: 100%;
+    background-color: black;
+    box-shadow: 3px 5px 5px rgb(15, 15, 15);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5%;
+    color: white;
+}
+.rep-card-hd{
+    width: 70%;
+    height: 30%;
+    /* background-color: red; */
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    color: white;
+}
+.rep-card-hd > p{
+    font-size: 13px;
+}
+.rep-card-hd-i{
+    width: 25%;
+    height: 100%;
+    background-color: rgba(131, 131, 131, 0.178);
+    border-radius: 5px;
+    color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+}
+.rep-card-fig{
+    width: 70%;
+    height: 35%;
+    /* background-color: red; */
+    padding-left: 3px;
+    display: flex;
+    gap: 5%;
+}
+.rep-card-fig > span{
+    font-size: 12px;
+    align-self: flex-end;
+}
+
+
+.rep-tb-wrp{
+    width: 99%;
+    height: 59%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    color: white !important;
+    padding-left: 1%;
+}

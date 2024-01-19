@@ -25,7 +25,7 @@ const Navbar = () => {
                             <NavLink to='/notifications' id="nav-icon">
                                 <RiNotification4Line />
                             </NavLink>
-                            <NavLink to='/profile' id="nav-icon">
+                            <NavLink to='/user-dash' id="nav-icon">
                                 <RiAccountPinCircleLine />
                             </NavLink>
                         </>

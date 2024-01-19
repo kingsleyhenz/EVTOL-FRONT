@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     gap: 5%;
+    border-right: 1px solid rgb(39, 39, 39);
 }
 .user-bar-head{
     width: 100%;

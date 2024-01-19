@@ -5,6 +5,7 @@ import { IoNotifications } from "react-icons/io5";
 import { MdDateRange } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
+import { ReportCards, ReportTable } from "../../Component/user-dash-comps";
 
 const UserHome=()=>{
     return(
@@ -28,7 +29,8 @@ const UserHome=()=>{
                             <IoIosPerson id="dash-date-i"/>
                         </div>
                     </div>
-                    
+                    <ReportCards/>
+                    <ReportTable/>
                 </div>
             </div>
         </>
