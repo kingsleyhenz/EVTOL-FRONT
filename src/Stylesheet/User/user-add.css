@@ -18,12 +18,12 @@
 .root{
     /* background-color: red; */
     width: 100%;
-    height: 300px;
+    height: 350px;
     display: flex;
-    gap: 10%;
+    gap: 5%;
 }
 .list{
-    height: 90%;
+    height: 100%;
     width: 15%;
     /* background-color: blue; */
     display: flex;
@@ -31,11 +31,42 @@
     justify-content: space-between;
 }
 .tab{
-    margin-bottom: 20px !important;
+    margin-bottom: 25px !important;
     padding: 7% 5% !important;
     color: white !important;
     font-size: 15px !important;
 }
 .tab:hover{
     background-color: rgb(26, 26, 26) !important;
+}
+.panel{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 80%;
+    height: 50%;
+}
+.panel > input{
+    background-color: white;
+    height: 25%;
+    width: 23%;
+    border: none;
+    border: 3px solid rgb(39, 39, 39);
+    border-radius: 3px;
+    color: black;
+    outline: none;
+    padding-left: 1%;
+    font-size: 13px;
+}
+.shorter{
+    width: 60% !important;
+}
+.shorter > input{
+    width: 30%;
+}
+
+.p-desc{
+    width: 70% !important;
+    height: 300px !important;
 }
