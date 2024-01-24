@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, rem, Textarea } from "@mantine/core";
+import { Tabs, rem, Textarea, Transition } from "@mantine/core";
 import "../Stylesheet/User/user-add.css";
 
 function RequestMod() {
@@ -40,88 +40,133 @@ function RequestMod() {
         </Tabs.Tab>
       </Tabs.List>
 
-      <Tabs.Panel value="first" className="panel">
-        <div className="panel-inp">
-          <label>Parcel Country</label>
-          <input type="text" placeholder="Parcel Country" />
-        </div>
-        <div className="panel-inp">
-          <label>Parcel State</label>
-          <input type="text" placeholder="Parcel State" />
-        </div>
-        <div className="panel-inp">
-          <label>Parcel City</label>
-          <input type="text" placeholder="Parcel City" />
-        </div>
-        <div className="panel-inp">
-          <label>Parcel Address</label>
-          <input type="text" placeholder="Parcel Address" />
-        </div>
-      </Tabs.Panel>
+      <Transition
+        mounted={currentIndex === 0}
+        transition="fade"
+        duration={500}
+        timingFunction="ease"
+      >
+        {(styles) => (
+          <Tabs.Panel value="first" className="panel" style={styles}>
+            <div className="panel-inp">
+              <label>Parcel Country</label>
+              <input type="text" placeholder="Parcel Country" />
+            </div>
+            <div className="panel-inp">
+              <label>Parcel State</label>
+              <input type="text" placeholder="Parcel State" />
+            </div>
+            <div className="panel-inp">
+              <label>Parcel City</label>
+              <input type="text" placeholder="Parcel City" />
+            </div>
+            <div className="panel-inp">
+              <label>Parcel Address</label>
+              <input type="text" placeholder="Parcel Address" />
+            </div>
+          </Tabs.Panel>
+        )}
+      </Transition>
 
-      <Tabs.Panel value="second" className="panel">
-        <div className="panel-inp">
-          <label>Recipient Country</label>
-          <input type="text" placeholder="Recipient Country" />
-        </div>
-        <div className="panel-inp">
-          <label>Recipient State</label>
-          <input type="text" placeholder="Recipient State" />
-        </div>
-        <div className="panel-inp">
-          <label>Recipient City</label>
-          <input type="text" placeholder="Recipient City" />
-        </div>
-        <div className="panel-inp">
-          <label>Recipient Address</label>
-          <input type="text" placeholder="Recipient Address" />
-        </div>
-      </Tabs.Panel>
+      <Transition
+        mounted={currentIndex === 1}
+        transition="fade"
+        duration={500}
+        timingFunction="ease"
+      >
+        {(styles) => (
+          <Tabs.Panel value="second" className="panel" style={styles}>
+            <div className="panel-inp">
+              <label>Recipient Country</label>
+              <input type="text" placeholder="Recipient Country" />
+            </div>
+            <div className="panel-inp">
+              <label>Recipient State</label>
+              <input type="text" placeholder="Recipient State" />
+            </div>
+            <div className="panel-inp">
+              <label>Recipient City</label>
+              <input type="text" placeholder="Recipient City" />
+            </div>
+            <div className="panel-inp">
+              <label>Recipient Address</label>
+              <input type="text" placeholder="Recipient Address" />
+            </div>
+          </Tabs.Panel>
+        )}
+      </Transition>
 
-      <Tabs.Panel value="third" className="panel shorter">
-        <div className="panel-inp">
-          <label>Recipient Name</label>
-          <input type="text" placeholder="Recipient Name" />
-        </div>
-        <div className="panel-inp">
-          <label>Recipient Email</label>
-          <input type="text" placeholder="Recipient Email" />
-        </div>
-        <div className="panel-inp">
-          <label>Recipient Phone</label>
-          <input type="text" placeholder="Recipient Phone" />
-        </div>
-      </Tabs.Panel>
+      <Transition
+        mounted={currentIndex === 2}
+        transition="fade"
+        duration={500}
+        timingFunction="ease"
+      >
+        {(styles) => (
+          <Tabs.Panel value="third" className="panel shorter" style={styles}>
+            <div className="panel-inp">
+              <label>Recipient Name</label>
+              <input type="text" placeholder="Recipient Name" />
+            </div>
+            <div className="panel-inp">
+              <label>Recipient Email</label>
+              <input type="text" placeholder="Recipient Email" />
+            </div>
+            <div className="panel-inp">
+              <label>Recipient Phone</label>
+              <input type="text" placeholder="Recipient Phone" />
+            </div>
+          </Tabs.Panel>
+        )}
+      </Transition>
 
-      <Tabs.Panel value="fourth" className="panel">
-        <div className="panel-inp">
-          <label>Parcel Name</label>
-          <input type="text" placeholder="Parcel Name" />
-        </div>
-        <div className="panel-inp">
-          <label>Parcel Width</label>
-          <input type="number" placeholder="Parcel Width" />
-        </div>
-        <div className="panel-inp">
-          <label>Parcel Length</label>
-          <input type="number" placeholder="Parcel Length" />
-        </div>
-        <div className="panel-inp">
-          <label>Parcel Height</label>
-          <input type="number" placeholder="Parcel Height" />
-        </div>
-      </Tabs.Panel>
+      <Transition
+        mounted={currentIndex === 3}
+        transition="fade"
+        duration={500}
+        timingFunction="ease"
+      >
+        {(styles) => (
+          <Tabs.Panel value="fourth" className="panel" style={styles}>
+            <div className="panel-inp">
+              <label>Parcel Name</label>
+              <input type="text" placeholder="Parcel Name" />
+            </div>
+            <div className="panel-inp">
+              <label>Parcel Width</label>
+              <input type="number" placeholder="Parcel Width" />
+            </div>
+            <div className="panel-inp">
+              <label>Parcel Length</label>
+              <input type="number" placeholder="Parcel Length" />
+            </div>
+            <div className="panel-inp">
+              <label>Parcel Height</label>
+              <input type="number" placeholder="Parcel Height" />
+            </div>
+          </Tabs.Panel>
+        )}
+      </Transition>
 
-      <Tabs.Panel value="fifth" className="panel">
-        <div className="panel-inp">
-          <label>Parcel Description</label>
-          <Textarea
-            resize="vertical"
-            placeholder="Parcel Description"
-            className="p-desc"
-          />
-        </div>
-      </Tabs.Panel>
+      <Transition
+        mounted={currentIndex === 4}
+        transition="fade"
+        duration={500}
+        timingFunction="ease"
+      >
+        {(styles) => (
+          <Tabs.Panel value="fifth" className="panel" style={styles}>
+            <div className="panel-inp">
+              <label>Parcel Description</label>
+              <Textarea
+                resize="vertical"
+                placeholder="Parcel Description"
+                className="p-desc"
+              />
+            </div>
+          </Tabs.Panel>
+        )}
+      </Transition>
     </Tabs>
   );
 }
