@@ -49,23 +49,38 @@
     width: 90%;
     height: 10px !important;
 }
+.panel-inp{
+    width: 25%;
+    height: 25%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.panel-inp > label{
+    font-size: 13px;
+    color: white;
+}
 .panel-inp > input{
-    background-color: white;
-    height: 17%;
-    width: 23%;
+    background-color: transparent;
+    height: 65%;
+    width: 90%;
     border: none;
-    border: 3px solid rgb(39, 39, 39);
+    border: 1px solid rgb(85, 85, 85);
     border-radius: 3px;
-    color: black;
     outline: none;
-    padding-left: 1%;
+    color: white;
+    padding-left: 2%;
     font-size: 13px;
 }
 .shorter{
-    width: 70% !important;
+    width: 90% !important;
+}
+.shorter > .panel-inp{
+    width: 30%;
 }
 .shorter > input{
-    width: 30%;
+    width: 100%;
 }
 
 .p-desc{
