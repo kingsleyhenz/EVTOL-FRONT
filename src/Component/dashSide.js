@@ -1,45 +1,39 @@
 import React from "react";
 import {NavLink} from "react-router-dom"
 import '../Stylesheet/dashSide.css';
-import {AiOutlineAppstoreAdd} from 'react-icons/ai'
-import {GrDeploy} from 'react-icons/gr'
+import { IoCreateOutline, IoDownloadOutline } from "react-icons/io5";
 import {BsClipboardData} from 'react-icons/bs'
 import {SiDatabricks} from 'react-icons/si'
 import {MdOutlineCropFree} from 'react-icons/md'
-import {GrHistory} from 'react-icons/gr'
-
+import { GiDeliveryDrone } from "react-icons/gi";
 
 const SideBar =()=>{ 
     return(
         <>
         <div className="Bar">
         <div className="title-bar">
-            <h2>EV-TRANS</h2>
+            <GiDeliveryDrone/>
         </div>
             <div className="firstlayer">
             <NavLink to="/">
-                <p id="dp">Register Device</p>
-                <AiOutlineAppstoreAdd id="dashi"/>
+                <IoCreateOutline id="dashi"/>
+                <p id="dp">Device Overview</p>
                 </NavLink>
             <NavLink to="/load">
-                <p id="dp">Load Device</p>
-                <GrDeploy id="dashi"/>
+                <IoDownloadOutline id="dashi"/>
+                <p id="dp">Register & Load</p>
                 </NavLink>
             <NavLink to="/all">
-                <p id="dp">All Devices</p>
                 <BsClipboardData id="dashi"/>
+                <p id="dp">All Devices</p>
             </NavLink>
-            <NavLink to="/viewmeds">
-               <p id="dp"> Medications</p>
+            <NavLink to="/requests">
                <SiDatabricks id="dashi"/>
+               <p id="dp">All Requests</p>
                 </NavLink>
-            <NavLink to="/viewAvailable">
-                <p id="dp">Avalaible EVTOL</p>
-                <MdOutlineCropFree id="dashi"/>
-            </NavLink>
             <NavLink to="/viewbattery">
+                
                 <p id="dp">History</p>
-                <GrHistory id="dashi"/>
             </NavLink>
             </div>
         </div>

@@ -2,15 +2,18 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import '../Stylesheet/stat.css'
+import { GiDeliveryDrone } from "react-icons/gi";
+import { TbDroneOff,TbDrone } from "react-icons/tb";
 
 const TotalEv = () => {
     const [totalEv, setTotalEv] = useState(0);
     const [loading, setLoading] = useState(true);
+    const baseUrl = `https://droneservice.onrender.com`
   
     useEffect(() => {
       const fetchTotalEv = async () => {
         try {
-          const response = await axios.get("http://localhost:4000/api/v1/evtol/admin/all");
+          const response = await axios.get(`${baseUrl}/api/v1/evtol/admin/all`);
           const data = response.data;
           const totalEvCount = data.data.length;
           setTimeout(() => {
@@ -28,9 +31,9 @@ const TotalEv = () => {
   
     return (
       <div className="statbx">
-        <p>Total EVTOLs</p>
+        {/* <GiDeliveryDrone className="drone-i"/> */}
+        <p className="blue">Total Devices</p>
         {loading ? <div className="loader"></div> : totalEv}
-        <a href="">View</a>
       </div>
     );
   };
@@ -38,6 +41,7 @@ const TotalEv = () => {
   const TotalIdle = () => {
     const [totalIdle, setTotalIdle] = useState(0);
     const [loading, setLoading] = useState(true);
+    const baseUrl = `https://droneservice.onrender.com`
   
     useEffect(() => {
       fetchEvtols();
@@ -45,7 +49,7 @@ const TotalEv = () => {
   
     const fetchEvtols = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/evtol/admin/all");
+        const response = await axios.get(`${baseUrl}/api/v1/evtol/admin/all`);
         const { data } = response.data;
         const idleEvtols = data.filter((evtol) => evtol.state === "IDLE");
         setTimeout(() => {
@@ -60,9 +64,9 @@ const TotalEv = () => {
   
     return (
       <div className="statbx">
-        <p>EVTOLs Available</p>
+        {/* <TbDrone className="drone-i"/> */}
+        <p>Devices Available</p>
         {loading ? <div className="loader"></div> : totalIdle}
-        <a href="">View</a>
       </div>
     );
   };
@@ -70,6 +74,7 @@ const TotalEv = () => {
   const TotalBooked = () => {
     const [totalBooked, setTotalBooked] = useState(0);
     const [loading, setLoading] = useState(true);
+    const baseUrl = `https://droneservice.onrender.com`
   
     useEffect(() => {
       fetchEvtols();
@@ -77,7 +82,7 @@ const TotalEv = () => {
   
     const fetchEvtols = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/evtol/admin/all");
+        const response = await axios.get(`${baseUrl}/api/v1/evtol/admin/all`);
         const { data } = response.data;
         const idleEvtols = data.filter((evtol) => evtol.state === "DELIVERING");
         setTimeout(() => {
@@ -92,9 +97,9 @@ const TotalEv = () => {
   
     return (
       <div className="statbx">
-        <p>EVTOLs In Transit</p>
+        {/* <TbDroneOff className="drone-i"/> */}
+        <p className="red">Devices In Transit</p>
         {loading ? <div className="loader"></div> : totalBooked}
-        <a href="">View</a>
       </div>
     );
   };

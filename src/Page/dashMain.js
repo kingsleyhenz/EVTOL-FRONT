@@ -5,6 +5,7 @@ import { useState } from "react";
 import "../Stylesheet/dashMain.css";
 import SideBar from "../Component/dashSide";
 import { TotalBooked, TotalEv, TotalIdle } from "../Component/stats";
+import DemoChart from './../Component/chart';
 
 const Home = () => {
   const [evtol, setEvtol] = useState({
@@ -65,7 +66,6 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // axios.post("https://evtol-back-production.up.railway.app/api/v1/evtol/admin/Register", evtol)
        axios.post("http://localhost:4000/api/v1/evtol/admin/Register", evtol)
       .then((res) => {
         if (res.data.status === "Success") {
@@ -101,24 +101,25 @@ const Home = () => {
 
   return (
     <>
-      <div className="wrp">
+      <div className="ov-wrp">
         <SideBar />
         <div className="dashmain">
-          <p id="dhd" >Registeration Page</p>
-          <div className="fleetbx">
-            <div className="dubs">
-              <TotalEv/>
-              <TotalIdle/>
-              <TotalBooked/>
+          <div className="wel-cnt">
+            <div className="wel-bx">
+              <h2>Hi! Welcome 👋</h2>
             </div>
-            <form onSubmit={handleSubmit}>
-              <input type="text" placeholder="Serial No." name="serialNo" value={evtol.serialNo}onChange={handleChange} required/>
-              <input type="text" placeholder="Model" name="model" value={evtol.model} onChange={handleChange} readOnly/>
-              <input type="text" placeholder="Weight(gr)" name="weight" value={evtol.weight} onChange={handleChange} required/>
-              <input type="text" placeholder="Battery Level %" name="battery" value={evtol.battery} onChange={handleChange} readOnly/>
-              <input name="state" placeholder="State" value={evtol.state} onChange={handleChange} readOnly></input>
-              <button type="submit">Register</button>
-            </form>
+            <div className="wel-stats">
+              <TotalBooked/>
+              <TotalEv/> 
+              <TotalIdle/>
+            </div>
+          </div>
+          <div className="graph-con">
+            <DemoChart/>
+          </div>
+          <div className="tab-stat-con">
+            <div className="tab-stat"></div>
+            <div className="misc-stat"></div>
           </div>
         </div>
       </div>
@@ -126,3 +127,17 @@ const Home = () => {
   );
 };
 export default Home;
+
+{/* <div className="fleetbx">
+            <div className="dubs">
+              <TotalEv/>
+              <TotalIdle/>
+              <TotalBooked/>
+            </div>
+            <form onSubmit={handleSubmit} className="regForm">
+              <h2>Register New Drone</h2>
+              <input type="text" placeholder="Serial No." name="serialNo" value={evtol.serialNo}onChange={handleChange} required/>
+              <input type="text" placeholder="Weight(gr)" name="weight" value={evtol.weight} onChange={handleChange} required/>
+              <button type="submit">Register</button>
+            </form>
+          </div> */}

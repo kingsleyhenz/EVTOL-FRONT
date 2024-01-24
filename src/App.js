@@ -5,7 +5,7 @@ import EvtolList from "./Page/allEvtol"
 import Load from "./Page/evtolLoad"
 import "./Stylesheet/Login.css"
 import { Route, Routes } from "react-router-dom";
-import Meds from "./Page/allMeds"
+import Requests from "./Page/requests"
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/all" element={<EvtolList />} />
         <Route path="/load" element={<Load/>}/>
-        <Route path="/viewmeds" element={<Meds/>}/>
+        <Route path="/requests" element={<Requests/>}/>
         <Route path="/viewAvailable" element={<Avalaible />} />
     </Routes>
     </>

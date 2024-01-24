@@ -6,11 +6,12 @@ import DataTable from "react-data-table-component";
 
 const Avalaible = () => {
   const [evtols, setEvtols] = useState([]);
+  const baseUrl = `https://droneservice.onrender.com`
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(
-        "http://localhost:4000/api/v1/evtol/admin/availableEV"
+        `${baseUrl}/api/v1/evtol/admin/availableEV`
       );
       setEvtols(result.data.data);
     };
@@ -45,7 +46,6 @@ const Avalaible = () => {
       <div className="wrpp">
         <SideBar />
         <div className="main">
-          <p>Available EVTOL DEVICES</p>
           <div className="evwrap">
             <DataTable columns={columns} data={evtols} pagination />
           </div>
