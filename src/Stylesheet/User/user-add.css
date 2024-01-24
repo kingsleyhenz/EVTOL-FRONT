@@ -20,21 +20,23 @@
     width: 100%;
     height: 350px;
     display: flex;
-    gap: 5%;
+    flex-direction: column-reverse !important;
+    align-items: center;
 }
 .list{
-    height: 100%;
-    width: 15%;
+    height: 15%;
+    width: 20%;
     /* background-color: blue; */
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row !important;
+    justify-content: space-between !important;
 }
 .tab{
     margin-bottom: 25px !important;
-    padding: 7% 5% !important;
+    padding: 6% 15% !important;
     color: white !important;
     font-size: 15px !important;
+    background-color: orangered !important;
 }
 .tab:hover{
     background-color: rgb(26, 26, 26) !important;
@@ -43,13 +45,13 @@
     /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
-    align-items: start;
-    width: 80%;
-    height: 50%;
+    align-items: center;
+    width: 90%;
+    height: 10px !important;
 }
-.panel > input{
+.panel-inp > input{
     background-color: white;
-    height: 25%;
+    height: 17%;
     width: 23%;
     border: none;
     border: 3px solid rgb(39, 39, 39);
@@ -60,7 +62,7 @@
     font-size: 13px;
 }
 .shorter{
-    width: 60% !important;
+    width: 70% !important;
 }
 .shorter > input{
     width: 30%;

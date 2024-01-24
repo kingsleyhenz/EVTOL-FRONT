@@ -57,7 +57,7 @@ const ReportTable = () => {
         { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
       ];
   const rows = elements.map((element) => (
-    <Table.Tr key={element.name}>
+    <Table.Tr key={element.name} className="t-bod">
       <Table.Td>{element.position}</Table.Td>
       <Table.Td>{element.name}</Table.Td>
       <Table.Td>{element.symbol}</Table.Td>
@@ -78,9 +78,8 @@ const ReportTable = () => {
       <div className="rep-tb-wrp">
         <Table withRowBorders={false} captionSide="top" verticalSpacing="sm">
           <Table.Caption>Recently Delivered Parcels</Table.Caption>
-          <Table.Thead style={{color: 'orangered'}}>{ths}</Table.Thead>
-          <Table.Tbody style={{}}>{rows}</Table.Tbody>
-          <Table.Tfoot style={{color: 'orangered'}}>{ths}</Table.Tfoot>
+          <Table.Thead style={{color: 'white'}}>{ths}</Table.Thead>
+          <Table.Tbody>{rows}</Table.Tbody>
         </Table>
       </div>
     </>

@@ -62,11 +62,11 @@
 #not-link{
     width: 100%;
     height: 60%;
-    background-color:black;
+    background-color:rgb(22, 22, 22);
     border-radius: 40px;
     padding: 0px 10px;
     display: flex;
-    color: orangered;
+    color: white;
     align-items: center;
     text-decoration: none;
     gap: 3%;
@@ -75,8 +75,8 @@
     margin-top: 5px;
 }
 #not-link:hover{
-    color: black;
-    background: linear-gradient(45deg, rgb(255, 68, 0), black);
+    background-color: black;
+    transition: 0.4s ease-in-out;
 }
 .load-wrp{
     width: 100%;
@@ -85,4 +85,8 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(34, 34, 34);
+}
+.t-bod:hover{
+    background-color: rgb(34, 34, 34);
+    transition: 0.5s;
 }
