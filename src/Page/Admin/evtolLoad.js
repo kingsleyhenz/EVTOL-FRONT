@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import "../Stylesheet/Load.css";
-import SideBar from "../Component/dashSide";
+import "../../Stylesheet/Admin/Load.css";
+import SideBar from "../../Component/dashSide";
 
 const Load = () => {
 

@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useState } from "react";
-import "../Stylesheet/dashMain.css";
-import SideBar from "../Component/dashSide";
-import { TotalBooked, TotalEv, TotalIdle } from "../Component/stats";
-import DemoChart from './../Component/chart';
+import "../../Stylesheet/Admin/dashMain.css";
+import SideBar from "../../Component/dashSide";
+import { TotalBooked, TotalEv, TotalIdle } from "../../Component/stats";
+import DemoChart from '../../Component/chart';
 
 const Home = () => {
   const [evtol, setEvtol] = useState({

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import '../Stylesheet/stat.css'
+import '../Stylesheet/Admin/stat.css'
 import { GiDeliveryDrone } from "react-icons/gi";
 import { TbDroneOff,TbDrone } from "react-icons/tb";
 

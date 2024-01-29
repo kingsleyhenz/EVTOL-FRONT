@@ -1,18 +1,19 @@
 // import Login from "./Page/Login"
-import Home from "./Page/dashMain"
-import Avalaible from "./Page/avalaible"
-import EvtolList from "./Page/allEvtol"
-import Load from "./Page/evtolLoad"
-import "./Stylesheet/Login.css"
+import "./Stylesheet/Admin/Login.css"
 import { Route, Routes } from "react-router-dom";
-import Requests from "./Page/requests"
+import Requests from './Page/Admin/requests';
+import Home from './Page/Admin/dashMain';
+import EvtolList from './Page/Admin/allEvtol';
+import Load from './Page/Admin/evtolLoad';
+import Avalaible from './Page/Admin/avalaible';
+import Landing from './Page/User/land';
 
 function App() {
   return (
     <>
     <Routes>
-        {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/Overview" element={<Home />} />
         <Route path="/all" element={<EvtolList />} />
         <Route path="/load" element={<Load/>}/>
         <Route path="/requests" element={<Requests/>}/>

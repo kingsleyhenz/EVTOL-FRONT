@@ -10,7 +10,6 @@ const DemoChart = ()=> {
       color="springgreen"
       fillOpacity={0.9}
       strokeWidth={1}
-      // style={{width: '100%', height: '400px'}}
     />
   );
 }

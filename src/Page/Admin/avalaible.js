@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../Stylesheet/allev.css";
+import "../../Stylesheet/Admin/allev.css";
 import axios from "axios";
-import SideBar from "../Component/dashSide";
+import SideBar from "../../Component/dashSide";
 import DataTable from "react-data-table-component";
 
 const Avalaible = () => {

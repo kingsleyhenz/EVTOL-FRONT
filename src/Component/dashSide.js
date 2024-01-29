@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom"
-import '../Stylesheet/dashSide.css';
+import '../Stylesheet/Admin/dashSide.css';
 import { IoCreateOutline, IoDownloadOutline } from "react-icons/io5";
 import {BsClipboardData} from 'react-icons/bs'
 import {SiDatabricks} from 'react-icons/si'
@@ -15,7 +15,7 @@ const SideBar =()=>{
             <GiDeliveryDrone/>
         </div>
             <div className="firstlayer">
-            <NavLink to="/">
+            <NavLink to="/Overview">
                 <IoCreateOutline id="dashi"/>
                 <p id="dp">Device Overview</p>
                 </NavLink>

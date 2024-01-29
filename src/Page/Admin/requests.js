@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SideBar from "../Component/dashSide";
+import SideBar from "../../Component/dashSide";
 import { Table } from "@mantine/core";
-import "../Stylesheet/allev.css";
+import "../../Stylesheet/Admin/allev.css";
 import moment from "moment";
-import ReqMenu from './../Component/requestMenu';
+import ReqMenu from '../../Component/requestMenu';
 
 const Requests = () => {
   const [requests, setRequests] = useState([]);
