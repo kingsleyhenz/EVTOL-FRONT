@@ -9,7 +9,6 @@ function RequestMod() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // State for inputs
   const [parcelDetails, setParcelDetails] = useState({
     country: "",
     state: "",
@@ -36,7 +35,6 @@ function RequestMod() {
 
   const [parcelDescription, setParcelDescription] = useState("");
 
-  // Validation check for each tab
   const isNextEnabled = () => {
     switch (currentIndex) {
       case 0:
@@ -78,7 +76,7 @@ function RequestMod() {
     >
       <Tabs.List className="list">
         <Tabs.Tab value="next" className="tab" onClick={handleNext} disabled={!isNextEnabled()}>
-          Next
+        {currentIndex < tabValues.length - 1 ? "Next" : "Complete"}
         </Tabs.Tab>
         <Tabs.Tab value="back" className="tab" onClick={handleBack}>
           Back
