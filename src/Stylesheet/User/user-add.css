@@ -18,22 +18,22 @@
 .root{
     /* background-color: red; */
     width: 100%;
-    height: 350px;
+    height: 200px;
     display: flex;
     flex-direction: column-reverse !important;
     align-items: center;
 }
 .list{
-    height: 15%;
-    width: 20%;
+    height: 25%;
+    width: 25%;
     /* background-color: blue; */
     display: flex;
     flex-direction: row !important;
-    justify-content: space-between !important;
+    gap: 8%;
 }
 .tab{
     margin-bottom: 25px !important;
-    padding: 6% 11% !important;
+    padding: 5% 10% !important;
     color: white !important;
     font-size: 15px !important;
     background-color: orangered !important;
@@ -45,13 +45,12 @@
     /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 90%;
-    height: 10px !important;
+    padding-top: 2%;
 }
 .panel-inp{
     width: 25%;
-    height: 25%;
+    height: 50%;
     /* background-color: red; */
     display: flex;
     flex-direction: column;

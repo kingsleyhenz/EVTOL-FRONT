@@ -32,11 +32,7 @@ const AddReq = () => {
           </div>
           <div className="add-req-hd">
             <p>
-              Welcome to the Make a Request page, where you can easily submit
-              your request by providing the necessary details in the appropriate
-              fields. Please take a moment to ensure that all information is
-              accurately filled out, as this will help us process your request
-              promptly and efficiently.
+              Fill in the fields below to make a parcel request. Please note not all requests will be accepted due to factors such as excess weight and unavailable devices.
             </p>
           </div>
           <div className="add-tab">
