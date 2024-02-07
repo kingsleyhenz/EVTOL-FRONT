@@ -99,7 +99,30 @@ function RequestMod() {
         },
       });
       if(response.status === 201){
-        toast.success("Request Sent Successfully. Pending Acceptance...⏳")
+        toast.success("Request Sent Successfully. Pending Acceptance...⏳");
+        setParcelDetails({
+          country: "",
+          state: "",
+          city: "",
+          address: "",
+        });
+        setRecipientDetails({
+          country: "",
+          state: "",
+          city: "",
+          address: "",
+          name: "",
+          email: "",
+          phone: "",
+        });
+        setParcelDimensions({
+          name: "",
+          width: "",
+          length: "",
+          height: "",
+        });
+        setParcelDescription("");
+        setCurrentIndex(0);
       }else{
         toast.error(response.data.error)
       }
