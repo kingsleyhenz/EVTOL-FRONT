@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Tabs, rem, Textarea, Transition } from "@mantine/core";
 import "../Stylesheet/User/user-add.css";
+import { toast } from 'react-toastify';
 
 function RequestMod() {
   const iconStyle = { width: rem(12), height: rem(12) };
@@ -54,13 +56,55 @@ function RequestMod() {
 
   const handleNext = () => {
     if (isNextEnabled()) {
-      setCurrentIndex((prevIndex) => prevIndex + 1);
+      if (currentIndex < tabValues.length - 1) {
+        setCurrentIndex((prevIndex) => prevIndex + 1);
+      } else {
+        handleComplete();
+      }
     }
   };
 
   const handleBack = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
+  };
+
+  const handleComplete = async () => {
+    try {
+      const token = localStorage.getItem("auth_token");
+      const payload = {
+        recipientName: recipientDetails.name,
+        recipientEmail: recipientDetails.email,
+        recipientPhone: recipientDetails.phone,
+        parcelCountry: parcelDetails.country,
+        parcelState: parcelDetails.state,
+        parcelCity: parcelDetails.city,
+        parcelAddress: parcelDetails.address,
+        recipientCountry: recipientDetails.country,
+        recipientState: recipientDetails.state,
+        recipientCity: recipientDetails.city,
+        recipientAddress: recipientDetails.address,
+        parcelWidth: parcelDimensions.width,
+        parcelHeight: parcelDimensions.height,
+        parcelLength: parcelDimensions.length,
+        item: parcelDimensions.name,
+        description: parcelDescription,
+      };
+      const baseUrl = 'https://droneservice.onrender.com'
+
+      const response = await axios.post(`${baseUrl}/api/v1/request/send-request`, payload, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if(response.status === 201){
+        toast.success("Request Sent Successfully. Pending Acceptance...⏳")
+      }else{
+        toast.error(response.data.error)
+      }
+    } catch (error) {
+      console.error("Error in completing request:", error.message);
     }
   };
 
@@ -75,12 +119,18 @@ function RequestMod() {
       placement="right"
     >
       <Tabs.List className="list">
-        <Tabs.Tab value="next" className="tab" onClick={handleNext} disabled={!isNextEnabled()}>
-        {currentIndex < tabValues.length - 1 ? "Next" : "Complete"}
-        </Tabs.Tab>
-        <Tabs.Tab value="back" className="tab" onClick={handleBack}>
-          Back
-        </Tabs.Tab>
+      {currentIndex < tabValues.length - 1 ? (
+            <Tabs.Tab value="next" className="tab" onClick={handleNext} disabled={!isNextEnabled()}>
+              Next
+            </Tabs.Tab>
+          ) : (
+            <Tabs.Tab value="complete" className="tab" onClick={handleComplete} disabled={!isNextEnabled()}>
+              Complete
+            </Tabs.Tab>
+          )}
+          <Tabs.Tab value="back" className="tab" onClick={handleBack}>
+            Back
+          </Tabs.Tab>
       </Tabs.List>
 
       <Transition
