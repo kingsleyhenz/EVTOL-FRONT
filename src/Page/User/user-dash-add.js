@@ -10,7 +10,7 @@ const AddReq = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -32,7 +32,7 @@ const AddReq = () => {
           </div>
           <div className="add-req-hd">
             <p>
-              Fill in the fields below to make a parcel request. Please note not all requests will be accepted due to factors such as excess weight and unavailable devices.
+              Fill in the fields below to make a parcel request. Please note not all requests will be accepted due to factors such as excess weight of parcel and unavailable devices.
             </p>
           </div>
           <div className="add-tab">

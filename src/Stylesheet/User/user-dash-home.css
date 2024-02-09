@@ -2,7 +2,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: space-between;
+    gap: 2%;
     background-color: rgb(34, 34, 34);
 }
 .main-user-content{

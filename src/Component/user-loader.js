@@ -1,7 +1,7 @@
 import { Loader } from '@mantine/core';
 
 function UserDashLoader() {
-  return <Loader size={65} color='orangered'/>;
+  return <Loader size={60} color='orangered'/>;
 }
 
 export default UserDashLoader

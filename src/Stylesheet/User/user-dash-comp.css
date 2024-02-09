@@ -9,7 +9,7 @@
 .rep-card{
     width: 30%;
     height: 100%;
-    background-color: black;
+    background-color: rgb(26,26,26);
     box-shadow: 3px 5px 5px rgb(15, 15, 15);
     border-radius: 10px;
     display: flex;
@@ -58,7 +58,7 @@
 .rep-tb-wrp{
     width: 99%;
     height: 59%;
-    background-color: black;
+    background-color: rgb(26,26,26);
     display: flex;
     justify-content: space-between;
     border-radius: 10px;

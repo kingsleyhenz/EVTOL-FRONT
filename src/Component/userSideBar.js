@@ -25,7 +25,7 @@ const UserSide = () => {
             <GiStorkDelivery id="user-i"/>
             <p>Add Request</p>
             </NavLink>
-          <NavLink to="/" id="user-links">
+          <NavLink to="/my-requests" id="user-links">
             <AiFillDatabase id="user-i"/>
             <p>My Requests</p>
           </NavLink>

@@ -13,6 +13,7 @@ import Login from './Page/User/login';
 import { ToastContainer } from 'react-toastify';
 import UserHome from './Page/User/user-dash-home';
 import AddReq from "./Page/User/user-dash-add";
+import MyRequest from "./Page/User/my-request";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/viewAvailable" element={<Avalaible />} />
         <Route path="/user-dash" element={<UserHome />} />
         <Route path="/add-req" element={<AddReq />} />
+        <Route path="/my-requests" element={<MyRequest/>}/>
     </Routes>
     </>
   );
