@@ -1,0 +1,94 @@
+body::-webkit-scrollbar{
+    width: 1px;
+}
+.about-header{
+    width: 100%;
+    height: 150px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 7%;
+}
+.abt-us{
+    /* background-color: red; */
+    width: 100%;
+    height: 350px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.abt-card-bx{
+    width: 90%;
+    height: 75%;
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-between;
+}
+.abt-cards{
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    /* box-shadow: 3px 5px 10px whitesmoke; */
+    border-radius: 10px;
+    border: 1px solid rgb(252, 252, 252);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    padding: 0px 1%;
+}
+.abt-ico{
+    width: 20%;
+    height: 25%;
+    /* background-color: rgba(0, 0, 0, 0.329); */
+    border-radius: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.abt-hd{
+    font-size: 20px !important;
+}
+.abt-cards p{
+    font-size: 13px;
+    text-align: center;
+}
+.svc-bx{
+    width: 100%;
+    height: 800px;
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+.svc-con{
+    height: 100%;
+    width: 70%;
+    /* background-color: whitesmoke; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6%;
+}
+.svc-card{
+    width: 45%;
+    height: 28%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* background-color: red; */
+}
+.img{
+    background-image: url(https://www.udacity.com/blog/wp-content/uploads/2021/01/Drone-Engineer_Blog-scaled.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

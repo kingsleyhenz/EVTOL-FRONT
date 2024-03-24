@@ -1,90 +1,232 @@
 .hero{
     width: 100%;
     height: 600px;
-    background-color: rgba(0, 0, 0, 0.61);
-    background-image: url(/src/Image/mountain-peak-view-from-flying-drone-generated-by-ai.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: darken;
+    background-color: white;
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding-left: 5%;
+    gap: 10%;
 }
 .hero-txt{
     /* background-color: aqua; */
-    width: 65%;
-    height: 65%;
+    width: 45%;
+    height: 75%;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 5%;
-    color: white;
+    gap: 3%;
 }
 .hero-txt h2{
     font-size: 40px;
+    line-height: 60px;
 }
 .hero-txt p{
-
+}
+.hero-img{
+    width: 40%;
+    height: 65%;
+    /* background-color: red; */
+}
+.hero-img > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .hero-nav{
-    color: white;
     text-decoration: none;
-    border: 2px solid white;
-    width: 25%;
+    border: none;
+    width: 35%;
     height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 30px;
-}
-.hero-f{
-    width: 100%;
-    height: 650px;
-    /* border: 1px solid black; */
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    /* padding-top: 15px; */
-}
-.hero-wrp{
-    /* background-color: red; */
-    width: 100%;
-    height: 90%;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    justify-items: center;
-    padding: 0px 15px;
-}
-.hero-cds{
-    background-color: rgb(250, 250, 250);
-    width: 95%;
-    height: 95%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px;
-    gap: 4%;
-    text-align: center;
-    border: 1px solid rgb(241, 241, 241);
-}
-.ico-h{
-    width: 15%;
-    height: 22%;
-    border-radius: 100%;
-    background-color: rgba(53, 53, 53, 0.466);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 35px;
-}
-#ico-i{
+    background-color: black;
     color: white;
 }
-.hero-cds p{
-    font-size: 15px;
+.next-sell{
+    width: 100%;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.856);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 5%;
+    background-image: url(https://img.freepik.com/premium-vector/abstract-dark-background-with-blue-neon-glowing-design-template_132724-1228.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+.sell-text{
+    /* background-color: aqua; */
+    width: 50%;
+    height: 70%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    /* padding-top: 4%; */
+}
+.sell-text h2{
+    font-size: 32px;
+    font-weight: bolder;
+}
+.perks{
+    width: 100%;
+    height: 60%;
+    /* background-color: red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.perk-bx{
+    width: 46%;
+    height: 35%;
+    /* background-color: whitesmoke; */
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+.perk-bx p{
+    font-size: 12px;
+}
+#perk-i{
+    font-size: 20px !important;
+}
+.sell-img{
+    /* background-color: aqua; */
+    width: 45%;
+    height: 90%;
+    background-image: url(../../Image/Lovepik_com-401893396-drone-delivery.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.steps{
+    width: 100%;
+    height: 600px;
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+.step-con{
+    width: 70%;
+    height: 80%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.step-caro-con{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.step-caro{
+    /* background: rgba(243, 243, 243, 0.63); */
+    backdrop-filter: blur(10px);    
+    -webkit-backdrop-filter: blur(9px);    
+    width: 90%;
+    height: 80%;
+    /* border-radius: 100%; */
+    background-image: url(../../Image/Lovepik_com-401893396-drone-delivery.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: img;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.serv{
+    width: 100%;
+    height: 1400px;
+    background-color: rgba(255, 255, 255, 0.733);
+    background-image: url(https://img.freepik.com/premium-vector/white-abstract-background-3d-paper-style_23-2148403778.jpg?w=2000);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: lighten;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 5% 0%;
+}
+.servbx{
+    width: 70%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.serv-tx{
+    width: 45%;
+    height: 30%;
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+    padding: 0% 1%;
+}
+.serv-tx h2{
+    font-size: 30px;
+}
+.serv-tx button{
+    width: 45%;
+    height: 13%;
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+}
+#serv-img{
+    background-image: url(../../Image/dronebx.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.sub-con{
+    width: 100%;
+    height: 350px;
+    /* background-color: whitesmoke; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub-bx{
+    width: 70%;
+    height: 90%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+    text-align: center;
+}
+@keyframes img{
+    0%{
+        background-image: url(../../Image/dronebx.png);
+    }
+    25%{
+        background-image: url(../../Image/dark.png);
+    }
+    50%{
+        background-image: url(../../Image/dronecam.png);
+    }
+    75%{
+        background-image: url(../../Image/black.png);
+    }
+    100%{
+        background-image: url(../../Image/Lovepik_com-401893396-drone-delivery.png);
+    }
 }

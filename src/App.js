@@ -7,12 +7,14 @@ import EvtolList from './Page/Admin/allEvtol';
 import Load from './Page/Admin/evtolLoad';
 import Avalaible from './Page/Admin/avalaible';
 import Landing from './Page/User/land';
+import About from './Page/User/about';
 
 function App() {
   return (
     <>
     <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/about" element={<About/>} />
         <Route path="/Overview" element={<Home />} />
         <Route path="/all" element={<EvtolList />} />
         <Route path="/load" element={<Load/>}/>
