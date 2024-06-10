@@ -43,17 +43,22 @@ nav{
     height: 100%;
     display: flex;
     align-items: center;
+    gap: 7%;
 }
 #nav-btn{
     text-decoration: none;
     color: black;
     border: 1px solid rgb(48, 48, 48);
-    height: 70%;
+    height: 50%;
     display: flex;
     align-items: center;
-    width: 85%;
+    width: 45%;
     justify-content: center;
     border-radius: 25px;
+}
+#nav-log{
+    text-decoration: none;
+    color: black;
 }
 #nav-btn:hover{
     cursor: pointer;

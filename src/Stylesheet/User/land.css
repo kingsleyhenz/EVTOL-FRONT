@@ -20,6 +20,7 @@
     line-height: 60px;
 }
 .hero-txt p{
+    
 }
 .hero-img{
     width: 40%;
@@ -187,6 +188,7 @@
     border-radius: 30px;
     color: white;
     background-color: black;
+    border: none;
 }
 #serv-img{
     background-image: url(../../Image/dronebx.png);

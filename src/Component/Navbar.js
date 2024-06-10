@@ -17,7 +17,8 @@ const Navbar=()=>{
                     <NavLink to='/' id="nav-l">Features</NavLink>
                 </div>
                 <div className="nav-r">
-                    <NavLink to='/' id="nav-btn">Make A Request</NavLink>
+                    <NavLink to='/register-account' id="nav-btn">Sign Up</NavLink>
+                    <NavLink to='/login' id="nav-log">Login</NavLink>
                 </div>
             </nav>
         </>
