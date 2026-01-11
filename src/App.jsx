@@ -1,0 +1,43 @@
+// import Login from "./Page/Login"
+import { Route, Routes } from "react-router-dom";
+import Requests from './Page/Admin/requests';
+import Home from './Page/Admin/dashMain';
+import EvtolList from './Page/Admin/allEvtol';
+import Load from './Page/Admin/evtolLoad';
+import Avalaible from './Page/Admin/avalaible';
+import Landing from './Page/User/land';
+import About from './Page/User/about';
+import SignUp from "./Page/User/signup";
+import Login from './Page/User/login';
+import { ToastContainer } from 'react-toastify';
+import UserHome from './Page/User/user-dash-home';
+import AddReq from "./Page/User/user-dash-add";
+import MyRequest from "./Page/User/my-request";
+import Features from "./Page/User/features";
+import Contact from "./Page/User/contact";
+
+function App() {
+  return (
+    <>
+    <ToastContainer />
+    <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/register-account" element={<SignUp/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/Overview" element={<Home />} />
+        <Route path="/all" element={<EvtolList />} />
+        <Route path="/load" element={<Load/>}/>
+        <Route path="/requests" element={<Requests/>}/>
+        <Route path="/viewAvailable" element={<Avalaible />} />
+        <Route path="/user-dash" element={<UserHome />} />
+        <Route path="/add-req" element={<AddReq />} />
+        <Route path="/my-requests" element={<MyRequest/>}/>
+    </Routes>
+    </>
+  );
+}
+
+export default App;
