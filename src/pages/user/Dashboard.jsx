@@ -18,35 +18,49 @@ const Dashboard = () => {
     }, []);
 
     if (loading) {
-        return <div className="w-full h-screen flex justify-center items-center bg-[#222222]">
+        return <div className="w-full h-screen flex justify-center items-center bg-gray-50">
             <UserDashLoader />
         </div>;
     }
     return(
         <>
-            <div className="w-full h-screen flex gap-[2%] bg-[#222222]">
+            <div className="w-full h-screen flex bg-gray-50 font-['Poppins']">
                 <UserSide/>
-                <div className="w-[80%] h-full flex flex-col gap-[5%]">
-                    <div className="w-[99%] h-[10%] flex items-center justify-between text-white">
-                        <div className="w-[20%] h-full flex items-center gap-[2%]">
-                            <p className="text-[15px]">Friday, 16 August 2024</p>
-                            <MdDateRange className="text-[23px] mb-[1px]"/>
+                <div className="flex-1 h-full flex flex-col px-10 py-8 gap-8 overflow-y-auto">
+                    {/* Header */}
+                    <div className="w-full flex items-center justify-between text-[#111]">
+                        <div className="flex flex-col">
+                            <h1 className="text-2xl font-black tracking-tight">Dashboard</h1>
+                            <div className="flex items-center gap-2 text-gray-500 text-sm mt-1 font-medium">
+                                <MdDateRange className="text-lg text-[#ff4500]"/>
+                                <p>Friday, 16 August 2026</p>
+                            </div>
                         </div>
-                        <div className="w-[25%] h-full flex items-center">
-                            <NavLink to='/' className="w-full h-[60%] bg-[#161616] rounded-[40px] px-[10px] flex text-white items-center no-underline gap-[3%] hover:bg-black transition-all duration-400 ease-in-out">
-                                <IoNotifications className="text-[20px]"/>
-                                <p className="mt-[5px]">1 New Notification(s)</p>
+                        
+                        <div className="flex items-center gap-6">
+                            <NavLink to='/' className="flex py-3 px-6 bg-white border border-gray-200 rounded-full text-[#111] items-center gap-3 hover:border-black hover:shadow-md transition-all">
+                                <IoNotifications className="text-xl"/>
+                                <p className="text-sm font-bold">1 New Notification</p>
                             </NavLink>
                         </div>
-                        <div className="w-[20%] h-full flex items-center gap-[2%]">
-                            <p>Welcome Back, Henzy</p>
-                            <IoIosPerson className="text-[23px] mb-[1px]"/>
+                        
+                        <div className="flex items-center gap-4 bg-white border border-gray-200 py-2 px-4 rounded-full shadow-sm">
+                            <div className="w-10 h-10 rounded-full bg-[#ff4500]/10 flex items-center justify-center text-[#ff4500]">
+                                <IoIosPerson className="text-xl"/>
+                            </div>
+                            <div className="flex flex-col pr-2">
+                                <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Welcome Back</p>
+                                <p className="text-sm font-bold">Kingsley Henz</p>
+                            </div>
                         </div>
                     </div>
-                    <ReportCards/>
-                    <ReportTable/>
+                    <div className="flex flex-col gap-8">
+                        <ReportCards/>
+                        <ReportTable/>
+                    </div>
                 </div>
             </div>
+
         </>
     )
 }
