@@ -14,19 +14,20 @@ const MyRequests = () => {
     }, []);
 
     if (loading) {
-        return <div className="w-full h-screen flex justify-center items-center bg-[#222222]">
+        return <div className="w-full h-screen flex justify-center items-center bg-gray-50">
             <UserDashLoader/>
         </div>;
     }
     return(
         <>
-            <div className="w-full h-screen flex gap-[2%] bg-[#222222]">
+            <div className="w-full h-screen flex bg-gray-50 font-['Poppins']">
                 <UserSide/>
-                <div className="w-[80%] h-full">
-                    <div className="w-full h-[15%] text-white pt-[1%]">
-                        <h2 className="text-2xl font-bold">My Requests</h2>
+                <div className="flex-1 h-full flex flex-col px-10 py-8 gap-8 overflow-y-auto">
+                    <div className="w-full">
+                        <h2 className="text-2xl font-black tracking-tight text-[#111]">My Requests</h2>
+                        <p className="text-gray-500 text-sm font-medium leading-relaxed mt-1">View and track all your delivery requests.</p>
                     </div>
-                    <div className="w-[99%] h-[80%]">
+                    <div className="w-full flex-1 bg-white border border-gray-100 rounded-3xl p-8 shadow-sm">
                         <UserReqs/> 
                     </div>
                 </div>
