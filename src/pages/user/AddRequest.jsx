@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import UserSide from "../../Component/userSideBar";
-import UserDashLoader from "../../Component/user-loader";
-import RequestMod from "../../Component/requestModal";
+import UserSide from "../../components/userSideBar";
+import UserDashLoader from "../../components/user-loader";
+import RequestMod from "../../components/requestModal";
 
-const AddReq = () => {
+const AddRequest = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -43,4 +43,4 @@ const AddReq = () => {
   );
 };
 
-export default AddReq;
+export default AddRequest;

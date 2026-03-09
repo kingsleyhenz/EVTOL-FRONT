@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SideBar from "../../Component/dashSide";
+import SideBar from "../../components/dashSide";
 import { Table } from "@mantine/core";
 import moment from "moment";
-import ReqMenu from '../../Component/requestMenu';
+import ReqMenu from "../../components/requestMenu";
 
 const Requests = () => {
   const [requests, setRequests] = useState([]);

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import SideBar from "../../Component/dashSide";
-import { TotalBooked, TotalEv, TotalIdle } from "../../Component/stats";
-import DemoChart from '../../Component/chart';
+import SideBar from "../../components/dashSide";
+import { TotalBooked, TotalEv, TotalIdle } from "../../components/stats";
+import DemoChart from "../../components/chart";
 
 const Home = () => {
   const [evtol, setEvtol] = useState({
@@ -103,7 +103,7 @@ const Home = () => {
         <SideBar />
         <div className="w-[82%] h-[675px] pt-[15px] pr-[5px] overflow-y-auto [scrollbar-width:thin]">
           <div className="w-full h-[200px] mb-[20px] flex justify-between">
-            <div className="w-[55%] h-full bg-[rgba(0,0,0,0.548)] rounded-[10px] bg-[url(/src/Image/evtolmain.jpg)] bg-no-repeat bg-center bg-cover bg-blend-darken flex justify-center items-center text-white text-[30px] shadow-[0_10px_10px_rgba(0,0,0,0.1)]">
+            <div className="w-[55%] h-full bg-[rgba(0,0,0,0.548)] rounded-[10px] bg-[url(/src/assets/images/evtolmain.jpg)] bg-no-repeat bg-center bg-cover bg-blend-darken flex justify-center items-center text-white text-[30px] shadow-[0_10px_10px_rgba(0,0,0,0.1)]">
               <h2 className="font-bold">Hi! Welcome 👋</h2>
             </div>
             <div className="w-[40%] h-full flex flex-wrap justify-between gap-[1%]">

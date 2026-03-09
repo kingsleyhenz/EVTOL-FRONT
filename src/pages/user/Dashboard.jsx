@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import UserSide from './../../Component/userSideBar';
+import UserSide from "../../components/userSideBar";
 import { IoNotifications } from "react-icons/io5";
 import { MdDateRange } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
-import { ReportCards, ReportTable } from "../../Component/user-dash-comps";
-import UserDashLoader from "../../Component/user-loader";
+import { ReportCards, ReportTable } from "../../components/user-dash-comps";
+import UserDashLoader from "../../components/user-loader";
 
-const UserHome=()=>{
+const Dashboard = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -51,4 +51,4 @@ const UserHome=()=>{
     )
 }
 
-export default UserHome
+export default Dashboard

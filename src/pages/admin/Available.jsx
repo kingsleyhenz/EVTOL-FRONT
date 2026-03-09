@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SideBar from "../../Component/dashSide";
+import SideBar from "../../components/dashSide";
 import DataTable from "react-data-table-component";
 
 const Avalaible = () => {

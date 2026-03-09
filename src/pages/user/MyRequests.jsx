@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import UserReqs from "../../Component/all-my-requests";
-import UserSide from "../../Component/userSideBar";
-import UserDashLoader from './../../Component/user-loader';
+import UserReqs from "../../components/all-my-requests";
+import UserSide from "../../components/userSideBar";
+import UserDashLoader from "../../components/user-loader";
 
-const MyRequest=()=>{
+const MyRequests = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -35,4 +35,4 @@ const MyRequest=()=>{
     )
 }
 
-export default MyRequest
+export default MyRequests

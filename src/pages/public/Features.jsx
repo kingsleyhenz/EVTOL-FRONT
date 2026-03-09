@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from './../../Component/Navbar';
+import Navbar from "../../components/Navbar";
 import { GiDeliveryDrone } from "react-icons/gi";
 import { BsShieldCheck, BsLightningCharge, BsCloudSun } from "react-icons/bs";
 import { MdRadar } from "react-icons/md";

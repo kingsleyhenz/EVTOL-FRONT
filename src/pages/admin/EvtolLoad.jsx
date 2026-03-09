@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import SideBar from "../../Component/dashSide";
+import SideBar from "../../components/dashSide";
 
 const Load = () => {
 

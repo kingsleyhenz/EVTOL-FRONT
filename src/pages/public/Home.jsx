@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../../Component/Navbar";
+import Navbar from "../../components/Navbar";
 import { NavLink } from "react-router-dom";
 import { BsFillInfoCircleFill, BsArrowRight } from "react-icons/bs";
 import { GiDeliveryDrone } from "react-icons/gi";
-import heroimg from "../../Image/pngwing.com.png";
-import sellImg from "../../Image/Lovepik_com-401893396-drone-delivery.png";
-import Steps from "./../../Component/step";
+import heroimg from "../../assets/images/pngwing.com.png";
+import sellImg from "../../assets/images/Lovepik_com-401893396-drone-delivery.png";
+import Steps from "../../components/step";
 
-const Landing = () => {
+const Home = () => {
   return (
     <div className="bg-white min-h-screen font-['Poppins']">
       <Navbar />
@@ -182,4 +182,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Home;

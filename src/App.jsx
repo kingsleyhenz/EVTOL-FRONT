@@ -1,40 +1,54 @@
-// import Login from "./Page/Login"
 import { Route, Routes } from "react-router-dom";
-import Requests from './Page/Admin/requests';
-import Home from './Page/Admin/dashMain';
-import EvtolList from './Page/Admin/allEvtol';
-import Load from './Page/Admin/evtolLoad';
-import Avalaible from './Page/Admin/avalaible';
-import Landing from './Page/User/land';
-import About from './Page/User/about';
-import SignUp from "./Page/User/signup";
-import Login from './Page/User/login';
 import { ToastContainer } from 'react-toastify';
-import UserHome from './Page/User/user-dash-home';
-import AddReq from "./Page/User/user-dash-add";
-import MyRequest from "./Page/User/my-request";
-import Features from "./Page/User/features";
-import Contact from "./Page/User/contact";
+
+// Public Pages
+import Home from './pages/public/Home';
+import About from './pages/public/About';
+import Features from './pages/public/Features';
+import Contact from './pages/public/Contact';
+
+// Auth Pages
+import Login from './pages/auth/Login';
+import SignUp from "./pages/auth/Signup";
+
+// User Pages
+import UserDashboard from './pages/user/Dashboard';
+import AddRequest from "./pages/user/AddRequest";
+import MyRequests from "./pages/user/MyRequests";
+
+// Admin Pages
+import AdminDashboard from './pages/admin/Dashboard';
+import Requests from './pages/admin/Requests';
+import EvtolList from './pages/admin/EvtolList';
+import EvtolLoad from './pages/admin/EvtolLoad';
+import Available from './pages/admin/Available';
 
 function App() {
   return (
     <>
     <ToastContainer />
     <Routes>
-        <Route path="/" element={<Landing />} />
+        {/* Public Routes */}
+        <Route path="/" element={<Home />} />
         <Route path="/features" element={<Features />} />
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact />} />
+        
+        {/* Auth Routes */}
         <Route path="/register-account" element={<SignUp/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/Overview" element={<Home />} />
+        
+        {/* User Dashboard Routes */}
+        <Route path="/user-dash" element={<UserDashboard />} />
+        <Route path="/add-req" element={<AddRequest />} />
+        <Route path="/my-requests" element={<MyRequests/>}/>
+
+        {/* Admin Dashboard Routes */}
+        <Route path="/Overview" element={<AdminDashboard />} />
         <Route path="/all" element={<EvtolList />} />
-        <Route path="/load" element={<Load/>}/>
+        <Route path="/load" element={<EvtolLoad/>}/>
         <Route path="/requests" element={<Requests/>}/>
-        <Route path="/viewAvailable" element={<Avalaible />} />
-        <Route path="/user-dash" element={<UserHome />} />
-        <Route path="/add-req" element={<AddReq />} />
-        <Route path="/my-requests" element={<MyRequest/>}/>
+        <Route path="/viewAvailable" element={<Available />} />
     </Routes>
     </>
   );

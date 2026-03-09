@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SideBar from "../../Component/dashSide";
-import drone from "../../Image/flying-drone-background-sea-sunset_93200-2731.jpg";
+import SideBar from "../../components/dashSide";
+import drone from "../../assets/images/flying-drone-background-sea-sunset_93200-2731.jpg";
 import {
   MdOutlineModeEdit,
   MdOutlineRefresh,
