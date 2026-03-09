@@ -15,7 +15,7 @@ const AddRequest = () => {
 
   if (loading) {
     return (
-      <div className="w-full h-screen flex justify-center items-center bg-[#222222]">
+      <div className="w-full h-screen flex justify-center items-center bg-gray-50">
         <UserDashLoader />
       </div>
     );
@@ -23,18 +23,16 @@ const AddRequest = () => {
 
   return (
     <>
-      <div className="w-full h-screen flex gap-[2%] bg-[#222222]">
+      <div className="w-full h-screen flex bg-gray-50 font-['Poppins']">
         <UserSide />
-        <div className="w-[80%] h-full flex flex-col gap-4 p-4">
-          <div className="w-full h-[10%] flex items-center text-white">
-            <h2 className="text-2xl font-bold">Make A Request</h2>
-          </div>
-          <div className="w-full h-[15%] text-white pr-[1%]">
-            <p>
+        <div className="flex-1 h-full flex flex-col px-10 py-8 gap-8 overflow-y-auto">
+          <div className="w-full flex flex-col gap-2">
+            <h1 className="text-2xl font-black tracking-tight text-[#111]">Make A Request</h1>
+            <p className="text-gray-500 text-sm font-medium leading-relaxed max-w-3xl border-l-2 border-[#ff4500] pl-4">
               Fill in the fields below to make a parcel request. Please note not all requests will be accepted due to factors such as excess weight of parcel and unavailable devices.
             </p>
           </div>
-          <div className="w-full h-[70%]">
+          <div className="w-full flex-1 bg-white border border-gray-100 rounded-3xl p-8 shadow-sm">
             <RequestMod/>
           </div>
         </div>

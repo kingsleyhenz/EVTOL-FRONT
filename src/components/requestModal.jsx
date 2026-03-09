@@ -142,15 +142,15 @@ function RequestMod() {
     >
       <Tabs.List className="h-auto w-full flex flex-row justify-center gap-4 mt-8 border-none">
       {currentIndex < tabValues.length - 1 ? (
-            <button key="next" className="py-2 px-8 text-white text-[15px] bg-[#ff4500] hover:bg-[#1a1a1a] transition-colors rounded-md disabled:opacity-50 disabled:cursor-not-allowed" onClick={handleNext} disabled={!isNextEnabled()}>
-              Next
+            <button key="next" className="py-3 px-10 text-white font-bold text-sm bg-black hover:bg-[#ff4500] transition-colors rounded-full disabled:opacity-50 disabled:cursor-not-allowed shadow-md" onClick={handleNext} disabled={!isNextEnabled()}>
+              Next Step
             </button>
           ) : (
-            <button key="complete" className="py-2 px-8 text-white text-[15px] bg-[#ff4500] hover:bg-[#1a1a1a] transition-colors rounded-md disabled:opacity-50 disabled:cursor-not-allowed" onClick={handleComplete} disabled={!isNextEnabled()}>
-              Complete
+            <button key="complete" className="py-3 px-10 text-white font-bold text-sm bg-[#ff4500] hover:bg-black transition-colors rounded-full disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-[#ff4500]/20" onClick={handleComplete} disabled={!isNextEnabled()}>
+              Complete Request
             </button>
           )}
-          <button key="back" className="py-2 px-8 text-white text-[15px] bg-[#ff4500] hover:bg-[#1a1a1a] transition-colors rounded-md" onClick={handleBack}>
+          <button key="back" className="py-3 px-10 text-[#111] font-bold text-sm bg-gray-100 hover:bg-gray-200 transition-colors rounded-full disabled:opacity-50" onClick={handleBack} disabled={currentIndex === 0}>
             Back
           </button>
       </Tabs.List>
@@ -165,41 +165,41 @@ function RequestMod() {
         {(styles) => (
           <Tabs.Panel value="first" className="flex justify-between w-[95%] pt-[2%]" style={styles}>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Parcel Country</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Parcel Country</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Parcel Country"
+                placeholder="e.g. United States"
                 value={parcelDetails.country}
                 onChange={(e) => setParcelDetails({ ...parcelDetails, country: e.target.value })}
               />
             </div>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Parcel State</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Parcel State</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Parcel State"
+                placeholder="e.g. California"
                 value={parcelDetails.state}
                 onChange={(e) => setParcelDetails({ ...parcelDetails, state: e.target.value })}
               />
             </div>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Parcel City</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Parcel City</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Parcel City"
+                placeholder="e.g. San Francisco"
                 value={parcelDetails.city}
                 onChange={(e) => setParcelDetails({ ...parcelDetails, city: e.target.value })}
               />
             </div>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Parcel Address</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Parcel Address</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Parcel Address"
+                placeholder="e.g. 123 Sky Way"
                 value={parcelDetails.address}
                 onChange={(e) => setParcelDetails({ ...parcelDetails, address: e.target.value })}
               />
@@ -217,41 +217,41 @@ function RequestMod() {
         {(styles) => (
           <Tabs.Panel value="second" className="flex justify-between w-[95%] pt-[2%]" style={styles}>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Recipient Country</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Recipient Country</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Recipient Country"
+                placeholder="e.g. United Kingdom"
                 value={recipientDetails.country}
                 onChange={(e) => setRecipientDetails({ ...recipientDetails, country: e.target.value })}
               />
             </div>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Recipient State</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Recipient State</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Recipient State"
+                placeholder="e.g. Greater London"
                 value={recipientDetails.state}
                 onChange={(e) => setRecipientDetails({ ...recipientDetails, state: e.target.value })}
               />
             </div>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Recipient City</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Recipient City</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Recipient City"
+                placeholder="e.g. London"
                 value={recipientDetails.city}
                 onChange={(e) => setRecipientDetails({ ...recipientDetails, city: e.target.value })}
               />
             </div>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Recipient Address</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Recipient Address</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Recipient Address"
+                placeholder="e.g. 45 Tower Bridge"
                 value={recipientDetails.address}
                 onChange={(e) => setRecipientDetails({ ...recipientDetails, address: e.target.value })}
               />
@@ -269,31 +269,31 @@ function RequestMod() {
         {(styles) => (
           <Tabs.Panel value="third" className="flex justify-between w-[95%] pt-[2%]" style={styles}>
             <div className="w-[30%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Recipient Name</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Recipient Name</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Recipient Name"
+                placeholder="e.g. Jane Smith"
                 value={recipientDetails.name}
                 onChange={(e) => setRecipientDetails({ ...recipientDetails, name: e.target.value })}
               />
             </div>
             <div className="w-[30%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Recipient Email</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Recipient Email</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Recipient Email"
+                placeholder="jane.smith@example.com"
                 value={recipientDetails.email}
                 onChange={(e) => setRecipientDetails({ ...recipientDetails, email: e.target.value })}
               />
             </div>
             <div className="w-[30%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Recipient Phone</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Recipient Phone</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Recipient Phone"
+                placeholder="+1 234 567 8900"
                 value={recipientDetails.phone}
                 onChange={(e) => setRecipientDetails({ ...recipientDetails, phone: e.target.value })}
               />
@@ -311,41 +311,41 @@ function RequestMod() {
         {(styles) => (
           <Tabs.Panel value="fourth" className="flex justify-between w-[95%] pt-[2%]" style={styles}>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Parcel Name</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Parcel Name</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="text"
-                placeholder="Parcel Name"
+                placeholder="e.g. Medical Supplies"
                 value={parcelDimensions.name}
                 onChange={(e) => setParcelDimensions({ ...parcelDimensions, name: e.target.value })}
               />
             </div>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Parcel Width</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Parcel Width (cm)</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="number"
-                placeholder="Parcel Width"
+                placeholder="0.0"
                 value={parcelDimensions.width}
                 onChange={(e) => setParcelDimensions({ ...parcelDimensions, width: e.target.value })}
               />
             </div>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Parcel Length</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Parcel Length (cm)</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="number"
-                placeholder="Parcel Length"
+                placeholder="0.0"
                 value={parcelDimensions.length}
                 onChange={(e) => setParcelDimensions({ ...parcelDimensions, length: e.target.value })}
               />
             </div>
             <div className="w-[22%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Parcel Height</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Parcel Height (cm)</label>
               <input
-                className="bg-transparent h-10 w-full border border-[#555555] rounded-[3px] outline-none text-white px-2 text-[13px] placeholder-gray-500"
+                className="bg-gray-50 h-12 w-full border border-gray-100 rounded-2xl outline-none focus:border-black focus:ring-1 focus:ring-black text-[#111] px-4 text-sm font-medium transition-all"
                 type="number"
-                placeholder="Parcel Height"
+                placeholder="0.0"
                 value={parcelDimensions.height}
                 onChange={(e) => setParcelDimensions({ ...parcelDimensions, height: e.target.value })}
               />
@@ -363,17 +363,21 @@ function RequestMod() {
         {(styles) => (
           <Tabs.Panel value="fifth" className="flex justify-center w-[95%] pt-[2%]" style={styles}>
             <div className="w-[80%] flex flex-col gap-2">
-              <label className="text-[13px] text-white">Parcel Description</label>
+              <label className="text-xs font-bold uppercase tracking-widest text-gray-400 pl-2">Parcel Description & Custom Instructions</label>
               <Textarea
                 resize="vertical"
-                placeholder="Parcel Description"
-                className="w-full text-white"
+                placeholder="Briefly describe the contents and any handling instructions..."
+                className="w-full text-[#111]"
                 styles={{
                   input: {
-                    backgroundColor: 'transparent',
-                    border: '1px solid #555555',
-                    color: 'white',
-                    minHeight: '150px'
+                    backgroundColor: '#f9fafb',
+                    border: '1px solid #f3f4f6',
+                    borderRadius: '1rem',
+                    color: '#111',
+                    minHeight: '150px',
+                    padding: '1.5rem',
+                    fontSize: '0.875rem',
+                    fontWeight: '500',
                   }
                 }}
                 value={parcelDescription}
