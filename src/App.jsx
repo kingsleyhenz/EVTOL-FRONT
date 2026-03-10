@@ -15,6 +15,7 @@ import SignUp from "./pages/auth/Signup";
 import UserDashboard from './pages/user/Dashboard';
 import AddRequest from "./pages/user/AddRequest";
 import MyRequests from "./pages/user/MyRequests";
+import Notifications from "./pages/user/Notifications";
 
 // Admin Pages
 import AdminDashboard from './pages/admin/Dashboard';
@@ -42,6 +43,7 @@ function App() {
         <Route path="/user-dash" element={<UserDashboard />} />
         <Route path="/add-req" element={<AddRequest />} />
         <Route path="/my-requests" element={<MyRequests/>}/>
+        <Route path="/notifications" element={<Notifications/>}/>
 
         {/* Admin Dashboard Routes */}
         <Route path="/Overview" element={<AdminDashboard />} />
