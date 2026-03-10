@@ -16,6 +16,7 @@ import UserDashboard from './pages/user/Dashboard';
 import AddRequest from "./pages/user/AddRequest";
 import MyRequests from "./pages/user/MyRequests";
 import Notifications from "./pages/user/Notifications";
+import Profile from "./pages/user/Profile";
 
 // Admin Pages
 import AdminDashboard from './pages/admin/Dashboard';
@@ -44,6 +45,7 @@ function App() {
         <Route path="/add-req" element={<AddRequest />} />
         <Route path="/my-requests" element={<MyRequests/>}/>
         <Route path="/notifications" element={<Notifications/>}/>
+        <Route path="/profile" element={<Profile/>}/>
 
         {/* Admin Dashboard Routes */}
         <Route path="/Overview" element={<AdminDashboard />} />
