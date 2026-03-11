@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { GiDeliveryDrone } from "react-icons/gi";
-import { TbDroneOff,TbDrone } from "react-icons/tb";
+import { TbDroneOff, TbDrone, TbRadioactive } from "react-icons/tb";
 
 const TotalEv = () => {
     const [totalEv, setTotalEv] = useState(0);
@@ -15,10 +14,8 @@ const TotalEv = () => {
           const response = await axios.get(`${baseUrl}/api/v1/evtol/admin/all`);
           const data = response.data;
           const totalEvCount = data.data.length;
-          setTimeout(() => {
-            setTotalEv(totalEvCount);
-            setLoading(false);
-          }, 3000);
+          setTotalEv(totalEvCount);
+          setLoading(false);
         } catch (error) {
           console.error(error);
           setLoading(false);
@@ -26,13 +23,18 @@ const TotalEv = () => {
       };
   
       fetchTotalEv();
-    }, []);
+    }, [baseUrl]);
   
     return (
-      <div className="w-[31%] h-full bg-white rounded-[10px] shadow-[0_5px_15px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center gap-2 p-4 border border-gray-100 uppercase tracking-wider">
-        <p className="text-[12px] font-bold text-gray-500">Total Devices</p>
-        <div className="text-3xl font-black text-black">
-          {loading ? <div className="w-6 h-6 border-2 border-[#ff4500] border-t-transparent rounded-full animate-spin"></div> : totalEv}
+      <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-sm p-4 flex gap-4 items-center hover:shadow-md transition-shadow">
+        <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-gray-400 text-2xl">
+           <TbDrone />
+        </div>
+        <div>
+          <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none mb-1">Total Fleet</p>
+          <div className="text-2xl font-black text-[#111]">
+            {loading ? <div className="w-5 h-5 border-2 border-[#ff4500] border-t-transparent rounded-full animate-spin"></div> : totalEv}
+          </div>
         </div>
       </div>
     );
@@ -44,29 +46,31 @@ const TotalEv = () => {
     const baseUrl = `https://droneservice.onrender.com`
   
     useEffect(() => {
+        const fetchEvtols = async () => {
+            try {
+              const response = await axios.get(`${baseUrl}/api/v1/evtol/admin/all`);
+              const { data } = response.data;
+              const idleEvtols = data.filter((evtol) => evtol.state === "IDLE");
+              setTotalIdle(idleEvtols.length);
+              setLoading(false);
+            } catch (error) {
+              console.error(error);
+              setLoading(false);
+            }
+          };
       fetchEvtols();
-    }, []);
-  
-    const fetchEvtols = async () => {
-      try {
-        const response = await axios.get(`${baseUrl}/api/v1/evtol/admin/all`);
-        const { data } = response.data;
-        const idleEvtols = data.filter((evtol) => evtol.state === "IDLE");
-        setTimeout(() => {
-            setTotalIdle(idleEvtols.length);
-            setLoading(false);
-          }, 2000);
-      } catch (error) {
-        console.error(error);
-        setLoading(false);
-      }
-    };
+    }, [baseUrl]);
   
     return (
-      <div className="w-[31%] h-full bg-white rounded-[10px] shadow-[0_5px_15px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center gap-2 p-4 border border-gray-100 uppercase tracking-wider">
-        <p className="text-[12px] font-bold text-gray-500">Devices Available</p>
-        <div className="text-3xl font-black text-black">
-          {loading ? <div className="w-6 h-6 border-2 border-[#ff4500] border-t-transparent rounded-full animate-spin"></div> : totalIdle}
+      <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-sm p-4 flex gap-4 items-center hover:shadow-md transition-shadow">
+        <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center text-green-500 text-2xl">
+           <TbRadioactive />
+        </div>
+        <div>
+          <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none mb-1">Available</p>
+          <div className="text-2xl font-black text-[#111]">
+            {loading ? <div className="w-5 h-5 border-2 border-green-500 border-t-transparent rounded-full animate-spin"></div> : totalIdle}
+          </div>
         </div>
       </div>
     );
@@ -78,29 +82,31 @@ const TotalEv = () => {
     const baseUrl = `https://droneservice.onrender.com`
   
     useEffect(() => {
+        const fetchEvtols = async () => {
+            try {
+              const response = await axios.get(`${baseUrl}/api/v1/evtol/admin/all`);
+              const { data } = response.data;
+              const idleEvtols = data.filter((evtol) => evtol.state === "DELIVERING");
+              setTotalBooked(idleEvtols.length);
+              setLoading(false);
+            } catch (error) {
+              console.error(error);
+              setLoading(false);
+            }
+          };
       fetchEvtols();
-    }, []);
-  
-    const fetchEvtols = async () => {
-      try {
-        const response = await axios.get(`${baseUrl}/api/v1/evtol/admin/all`);
-        const { data } = response.data;
-        const idleEvtols = data.filter((evtol) => evtol.state === "DELIVERING");
-        setTimeout(() => {
-            setTotalBooked(idleEvtols.length);
-            setLoading(false);
-          }, 2000);
-      } catch (error) {
-        console.error(error);
-        setLoading(false);
-      }
-    };
+    }, [baseUrl]);
   
     return (
-      <div className="w-[31%] h-full bg-white rounded-[10px] shadow-[0_5px_15px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center gap-2 p-4 border border-gray-100 uppercase tracking-wider">
-        <p className="text-[12px] font-bold text-gray-500">Devices In Transit</p>
-        <div className="text-3xl font-black text-black">
-          {loading ? <div className="w-6 h-6 border-2 border-[#ff4500] border-t-transparent rounded-full animate-spin"></div> : totalBooked}
+      <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-sm p-4 flex gap-4 items-center hover:shadow-md transition-shadow">
+        <div className="w-12 h-12 bg-[#ff4500]/5 rounded-xl flex items-center justify-center text-[#ff4500] text-2xl">
+           <TbDroneOff />
+        </div>
+        <div>
+          <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none mb-1">In Mission</p>
+          <div className="text-2xl font-black text-[#111]">
+            {loading ? <div className="w-5 h-5 border-2 border-[#ff4500] border-t-transparent rounded-full animate-spin"></div> : totalBooked}
+          </div>
         </div>
       </div>
     );
