@@ -52,7 +52,7 @@ function App() {
         <Route path="/all" element={<EvtolList />} />
         <Route path="/load" element={<EvtolLoad/>}/>
         <Route path="/requests" element={<Requests/>}/>
-        <Route path="/viewAvailable" element={<Available />} />
+        <Route path="/available-drones" element={<Available />} />
     </Routes>
     </>
   );

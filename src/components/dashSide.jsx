@@ -40,9 +40,9 @@ const SideBar = () => {
           <p className="text-sm font-semibold tracking-wide">All Requests</p>
         </NavLink>
 
-        <NavLink to="/viewbattery" className="group flex items-center px-4 py-3.5 rounded-2xl gap-4 hover:bg-gray-50 hover:text-[#111] transition-all [&.active]:bg-black [&.active]:text-white">
+        <NavLink to="/available-drones" className="group flex items-center px-4 py-3.5 rounded-2xl gap-4 hover:bg-gray-50 hover:text-[#111] transition-all [&.active]:bg-black [&.active]:text-white">
           <MdHistory className="text-xl group-[.active]:text-white" />
-          <p className="text-sm font-semibold tracking-wide">History</p>
+          <p className="text-sm font-semibold tracking-wide">Available Fleet</p>
         </NavLink>
 
         <div className="mt-auto mb-6 w-full">
