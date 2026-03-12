@@ -1,107 +1,95 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SideBar from "../../components/dashSide";
-import { Table } from "@mantine/core";
+import { Table, Badge } from "@mantine/core";
 import moment from "moment";
 import ReqMenu from "../../components/requestMenu";
 
 const Requests = () => {
-  const [requests, setRequests] = useState([]);
-  const baseUrl = `https://droneservice.onrender.com`
+    const [requests, setRequests] = useState([]);
+    const baseUrl = `https://droneservice.onrender.com`
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `${baseUrl}/api/v1/request/all-requests`
-        );
-        setRequests(response.data);
-      } catch (error) {
-        console.log(error);
-      }
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${baseUrl}/api/v1/request/all-requests`);
+                setRequests(response.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, [baseUrl]);
+
+    const formatDate = (date) => {
+        return moment(date).format("MMM DD, YYYY");
     };
-    fetchData();
-  }, []);
 
-  const formatDate = (date) => {
-    return moment(date).format("MMMM DD, YYYY");
-  };
+    const getStatusBadge = (status) => {
+        switch (status) {
+            case 'Accepted':
+                return <Badge color="green" variant="light" radius="sm">Accepted</Badge>;
+            case 'Rejected':
+            case 'Canceled':
+                return <Badge color="red" variant="light" radius="sm">{status}</Badge>;
+            case 'Pending':
+            default:
+                return <Badge color="yellow" variant="light" radius="sm">Pending</Badge>;
+        }
+    };
 
-  const getStatusStyle = (status) => {
-    switch (status) {
-      case 'Pending':
-        return { color: 'rgb(201, 201, 0)', fontWeight: "bold", fontSize: '12px'};
-      case 'Accepted':
-        return { color: 'rgb(0, 124, 0)', fontWeight: "bold",  fontSize: '12px'};
-      case 'Rejected':
-        return { color: 'rgb(148, 0, 0)', fontWeight: "bold",  fontSize: '12px'};
-        case 'Canceled':
-        return { color: 'rgb(148, 0, 0)', fontWeight: "bold",  fontSize: '12px'};
-      default:
-        return {};
-    }
-  }
-  
+    const rows = requests.map((element, index) => (
+        <Table.Tr key={element._id} className="hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-0 font-['Poppins']">
+            <Table.Td className="py-5 font-bold text-[#111]">#{String(index + 1).padStart(4, '0')}</Table.Td>
+            <Table.Td className="py-5 font-medium text-gray-700">{element.recipientName}</Table.Td>
+            <Table.Td className="py-5 text-gray-500 font-medium">{element.item}</Table.Td>
+            <Table.Td className="py-5 text-gray-500 font-medium">{element.phone}</Table.Td>
+            <Table.Td className="py-5 text-gray-500 font-medium">{formatDate(element.expectedDeliveryDate)}</Table.Td>
+            <Table.Td className="py-5">{getStatusBadge(element.requestStatus)}</Table.Td>
+            <Table.Td className="py-5 text-right">
+                <ReqMenu />
+            </Table.Td>
+        </Table.Tr>
+    ));
 
-  const rows = requests.map((element) => (
-    <Table.Tr key={element._id}>
-      <Table.Td>{element.recipientName}</Table.Td>
-      <Table.Td>{element.email}</Table.Td>
-      <Table.Td>{element.address}</Table.Td>
-      <Table.Td>{element.phone}</Table.Td>
-      <Table.Td>{element.item}</Table.Td>
-      <Table.Td>{formatDate(element.expectedDeliveryDate)}</Table.Td>
-      <Table.Td style={getStatusStyle(element.requestStatus)}>{element.requestStatus}</Table.Td>
-      <Table.Td>
-        <ReqMenu/>
-      </Table.Td>
-    </Table.Tr>
-  ));
+    const ths = (
+        <Table.Tr className="border-b-2 border-gray-100">
+            <Table.Th className="text-gray-400 font-bold uppercase tracking-wider text-[11px] pb-4">ID</Table.Th>
+            <Table.Th className="text-gray-400 font-bold uppercase tracking-wider text-[11px] pb-4">Recipient</Table.Th>
+            <Table.Th className="text-gray-400 font-bold uppercase tracking-wider text-[11px] pb-4">Item</Table.Th>
+            <Table.Th className="text-gray-400 font-bold uppercase tracking-wider text-[11px] pb-4">Contact</Table.Th>
+            <Table.Th className="text-gray-400 font-bold uppercase tracking-wider text-[11px] pb-4">Delivery Date</Table.Th>
+            <Table.Th className="text-gray-400 font-bold uppercase tracking-wider text-[11px] pb-4">Status</Table.Th>
+            <Table.Th className="text-gray-400 font-bold uppercase tracking-wider text-[11px] pb-4 text-right">Actions</Table.Th>
+        </Table.Tr>
+    );
 
-  return (
-    <>
-      <div className="bg-[#f5f5f5] h-screen w-screen flex justify-between font-['Poppins']">
-        <SideBar />
-        <div className="w-[82%] h-full flex flex-col gap-[15px] pt-[15px] pr-[5px]">
-          <div className="w-[60%] h-[35px]">
-            <h2 className="text-xl font-bold">All Requests</h2>
-          </div>
-          <div className="bg-white w-full h-[600px] overflow-y-auto p-4 rounded-lg shadow [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <Table className="w-full border-collapse">
-              <Table.Thead>
-                <Table.Tr>
-                  <Table.Th className="p-4 text-sm font-bold text-[#333] text-center border-b border-[#f5f5f5]">Recipient Name</Table.Th>
-                  <Table.Th className="p-4 text-sm font-bold text-[#333] text-center border-b border-[#f5f5f5]">Email</Table.Th>
-                  <Table.Th className="p-4 text-sm font-bold text-[#333] text-center border-b border-[#f5f5f5]">Address</Table.Th>
-                  <Table.Th className="p-4 text-sm font-bold text-[#333] text-center border-b border-[#f5f5f5]">Phone</Table.Th>
-                  <Table.Th className="p-4 text-sm font-bold text-[#333] text-center border-b border-[#f5f5f5]">Item</Table.Th>
-                  <Table.Th className="p-4 text-sm font-bold text-[#333] text-center border-b border-[#f5f5f5]">Expected Date</Table.Th>
-                  <Table.Th className="p-4 text-sm font-bold text-[#333] text-center border-b border-[#f5f5f5]">Status</Table.Th>
-                  <Table.Th className="p-4 text-sm font-bold text-[#333] text-center border-b border-[#f5f5f5]"></Table.Th>
-                </Table.Tr>
-              </Table.Thead>
-              <Table.Tbody>
-                {requests.map((element) => (
-                  <Table.Tr key={element._id} className="hover:bg-[#f9f9f9] transition-colors">
-                    <Table.Td className="p-4 text-[13px] text-[#555] text-center">{element.recipientName}</Table.Td>
-                    <Table.Td className="p-4 text-[13px] text-[#555] text-center">{element.email}</Table.Td>
-                    <Table.Td className="p-4 text-[13px] text-[#555] text-center">{element.address}</Table.Td>
-                    <Table.Td className="p-4 text-[13px] text-[#555] text-center">{element.phone}</Table.Td>
-                    <Table.Td className="p-4 text-[13px] text-[#555] text-center">{element.item}</Table.Td>
-                    <Table.Td className="p-4 text-[13px] text-[#555] text-center">{formatDate(element.expectedDeliveryDate)}</Table.Td>
-                    <Table.Td className="p-4 text-[13px] text-center" style={getStatusStyle(element.requestStatus)}>{element.requestStatus}</Table.Td>
-                    <Table.Td className="p-4 text-[13px] text-center">
-                      <ReqMenu/>
-                    </Table.Td>
-                  </Table.Tr>
-                ))}
-              </Table.Tbody>
-            </Table>
-          </div>
+    return (
+        <div className="w-full h-screen flex bg-gray-50 font-['Poppins']">
+            <SideBar />
+            <div className="flex-1 h-full flex flex-col px-10 py-8 gap-8 overflow-y-auto">
+                <div className="w-full">
+                    <h1 className="text-2xl font-black tracking-tight text-[#111]">Delivery Requests</h1>
+                    <p className="text-gray-500 text-sm font-medium leading-relaxed mt-1">Review and manage all incoming parcel delivery requests.</p>
+                </div>
+
+                <div className="w-full flex-1 bg-white border border-gray-100 rounded-3xl p-8 shadow-sm overflow-hidden flex flex-col">
+                    <div className="w-full overflow-y-auto pr-2">
+                        {requests.length === 0 ? (
+                            <div className="w-full h-full flex flex-col items-center justify-center text-gray-400 gap-4 py-20">
+                                <p className="text-sm font-medium">No active delivery requests found.</p>
+                            </div>
+                        ) : (
+                            <Table withRowBorders={false} verticalSpacing="sm" className="w-full">
+                                <Table.Thead>{ths}</Table.Thead>
+                                <Table.Tbody>{rows}</Table.Tbody>
+                            </Table>
+                        )}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </>
-  );
+    );
 };
 
 export default Requests;
