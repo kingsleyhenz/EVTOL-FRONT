@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from './../../Component/Navbar';
 import { BsEnvelope, BsTelephone, BsGeoAlt, BsArrowRight } from "react-icons/bs";
+import { GiDeliveryDrone } from "react-icons/gi";
 
 const Contact = () => {
     return (
