@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from './../../Component/Navbar';
 import { RiSpeedFill, RiPlantFill, RiRoadMapFill } from "react-icons/ri";
 import { BsArrowUpRight } from "react-icons/bs";
+import { GiDeliveryDrone } from "react-icons/gi";
 
 const About = () => {
     return (
